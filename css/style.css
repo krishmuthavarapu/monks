@@ -1,0 +1,201 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+/* html,
+body,
+.view {
+  height: 100%; } */
+body{
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+}
+.mask{
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+  .skc{
+    color: #01783d!important
+  }
+  .skbc{
+    background-color: #01783d!important;
+    color: #fff;
+  }
+  .btn-rounded{
+    border-radius: 10em;
+  }
+  .height-vh{
+    height: 100vh;
+  }
+  .weight-400{
+    font-weight: 400;
+  }
+  .pb-100{
+    padding-bottom: 100px;
+  }
+/* @media (max-width: 740px) {
+  .full-page-intro {
+    height: 1000px;
+   } } */
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.top-nav-collapse {
+  background-color: #1C2331; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1C2331; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer, .bg-img {
+  background-color: #1C2331; 
+}
+  .bg-img{
+  background-image: url('../img/stu.jpg'); 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  }
+  /* image modal styles */
+  .btn:focus, .btn:active, button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  #image-gallery .modal-footer{
+    display: block;
+  }
+  
+  .thumb{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  /*  */
+  .point-cur{
+      cursor: pointer;
+  }
+  .gradient-custom{
+    background-image: linear-gradient(to top,#ffffff80 0,#74ebff75 100%);
+  }
+  .hr-cus{
+    
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      border: 0;
+      background: #fff;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .view, body, html {
+    height: 100%
+}
+
+/* @media (max-width:740px) {
+    .full-page-intro {
+        height: 1000px
+    }
+} */
+
+.carousel {
+    height: 50%
+}
+
+.carousel .carousel-inner, .carousel .carousel-inner .active, .carousel .carousel-inner .carousel-item {
+    height: 100%
+}
+
+@media (max-width:776px) {
+    .carousel {
+        height: 100%
+    }
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.page-footer, .top-nav-collapse {
+    background-color: #1C2331
+}
+
+@media only screen and (max-width:768px) {
+    .navbar {
+        background-color: #1C2331
+    }
+    .margin-top-50{
+        margin-top: 55px;
+      }
+      .mlc-5{
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+
+}
+ @media (min-width: 768px) and (max-width: 980px) {
+      .mlc-5{
+        margin-left: 7rem !important;
+        margin-right: 7rem !important;
+    }
+
+}
+/* .card{
+    margin: 0px 40px 0 40px;
+} */
+.rgba-black-light-cus, .rgba-black-light-cus:after {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.mlc-5{
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
+/* first page */
+.zoom:hover button{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.zoom button {
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+/* caf */
+.card-caf .card-body{
+  padding: 3px;
+  margin: 10px;
+  /* transition: initial; */
+  background: rgba(1, 120, 61, 0.69);
+  color: #fff;
+  border-radius: 8px;
+}
+.zoom:hover .card-body{
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+
+}
+.zoom .card-body {
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+/* selection */
+.bor-right{
+  border-right: 2px solid green;
+  height: 100%;
+}
