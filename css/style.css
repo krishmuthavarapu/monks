@@ -10,7 +10,9 @@ body{
 .mask{
   background-color: rgba(0, 0, 0, 0.123);
 }
-
+.h-rem{
+    font-size: 2.6rem;
+}
   .skc{
     color: #01783d!important
   }
@@ -93,7 +95,7 @@ body{
   }
   .hr-cus{
     
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
       margin-bottom: 0.3rem;
       margin-left: 3rem;
       margin-right: 3rem;
@@ -198,4 +200,12 @@ body{
 .bor-right{
   border-right: 2px solid green;
   height: 100%;
+}
+.card-sel .card-body{
+  padding: 3px;
+  margin: 10px;
+  /* transition: initial; */
+  background: rgba(0, 0, 0, 0.562);
+  color: #fff;
+  border-radius: 8px;
 }

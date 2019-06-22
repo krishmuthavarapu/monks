@@ -121,7 +121,7 @@
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-6 mb-4   text-center text-md-left">
                         <div class="col-12 mt-4">
-                            <h2 class="">Application <span class="skc">Contact Form</span></h2>
+                            <h1 class="">Application <span class="skc">Contact Form</span></h1>
                         </div>
 
                         <div class="row text-center card-caf mt-4">

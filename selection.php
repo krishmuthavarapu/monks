@@ -113,10 +113,55 @@
                     </div>
                     <div class=" col-lg-6 text-center">
                          <div>
-                             <h2 class="h2-responsive weight-400">Contact Application Form</h2>
-                             <button onclick="location.href='caf.php'" class="btn btn-success skbc mt-4 mb-4">Sign Up</button>
+                             <h2 class="h2-responsive weight-400">Contact <span class="skc">Application Form</span></h2>
+                             <button onclick="location.href='caf.php'" class="btn btn-success skbc mt-4 mb-4 btn-rounded ">Sign Up</button>
                          </div>
-                         <div></div>
+                         <div>
+                         <div class="mb-4   text-center text-md-left">
+                        <div class="row text-center card-sel mt-4">
+                              <div class="col-12">
+                                  <h2 class="h1-responsive skc weight-400">Heading</h2>
+                              </div>
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body ">
+                                    <h4 class="h4-responsive my-3">Title of the news</h4>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body ">
+                                    <h4 class="h4-responsive my-3">Title of the news</h4>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body ">
+                                    <h4 class="h4-responsive my-3">Title of the news</h4>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body ">
+                                    <h4 class="h4-responsive my-3">Title of the news</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                         </div>
                     </div>
                 </div>
             </div>
