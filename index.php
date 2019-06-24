@@ -9,8 +9,8 @@
     <link rel="icon shortcut" href="img/logo.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- fonts -->
-<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap" rel="stylesheet">    <!-- Bootstrap core CSS -->
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap" rel="stylesheet"> <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
@@ -81,47 +81,38 @@
 
             <!-- Content -->
             <div class="container pb-100 mb-4">
-                <div class="row ">
-                    <div class="col-6">
-                        <a class="navbar-brand " href="index.php">
-                            <!-- <img src="img/neuronoidsimage.png" width="70px" height="auto" alt=""> -->
-                            <!-- <h3 class="pl-4 pb-2 pt-3">Skill Monks</h3> -->
-                            <img src="img/logo.png" width="130px" alt="">
-                            <!-- <strong>MDB</strong> -->
-                        </a></div>
-                    <div class="col-6 text-center">
-                        <div class="">
-                            <p class="text-dark  font-weight-bolder pt-2 pt-lg-5">
-                                Email : edu@skillmonks.com &nbsp &nbsp Contact :
-                                9578800900
+                <?php include('includes/header.php'); ?>
 
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
 
                 <!--Grid row-->
                 <div class="row pt-3 mt-3 pb-3">
                     <div class="col text-center ">
-                        <h2 class="h-rem" style="font-weight:400"><span class="p-1">Welcome to</span><span class="p-1" style="color: #01783d;">SkillMonks</span></h2>
+                    <h2 class="h-rem" style="font-weight:400"><span class="p-1">Explore Here!</span></h2>
+
+                        <!-- <h2 class="h-rem" style="font-weight:400"><span class="p-1">Welcome to</span><span class="p-1" style="color: #01783d;">SkillMonks</span></h2> -->
                         <!-- <h2 class="h2-responsive weight-400"><span class="skbc p-1">Welcome </span><span style="" class="p-1 bg-dark text-white"> to SkillMonks</span></h2> -->
                     </div>
                 </div>
-                <div class="row wow fadeIn pb-100 mb-5 pt-3 mt-5">
+                <div class="row wow fadeIn pb-100 mb-5 pt-3 mt-5 animated fadeIn">
                     <div class="col text-center align-self-center">
                         <div class="overlay zoom">
-                            <button type="button" onclick="location.href='selection.php'" class="btn btn-default btn skbc btn-rounded "><div class="h5-responsive">Student</div></button>
+                            <button type="button" onclick="location.href='student_selection.php'" class="btn btn-default btn skbc btn-rounded ">
+                                <div class="h5-responsive">Student</div>
+                            </button>
                         </div>
                     </div>
                     <div class="col text-center align-self-center ">
-                    <div class="overlay zoom">
-                            <button type="button" class="btn btn-default btn skbc btn-rounded"><div class="h5-responsive">Institute</div></button>
+                        <div class="overlay zoom">
+                            <button type="button" onclick="location.href='institute_selection.php'" class="btn btn-default btn skbc btn-rounded">
+                                <div class="h5-responsive">Institute</div>
+                            </button>
                         </div>
                     </div>
                     <div class="col text-center align-self-center">
-                    <div class="overlay zoom">
-                            <button type="button" class="btn btn-default btn skbc btn-rounded"><div class="h5-responsive">Admin</div></button>
+                        <div class="overlay zoom">
+                            <button type="button" class="btn btn-default btn skbc btn-rounded">
+                                <div class="h5-responsive">Trainer</div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -133,54 +124,8 @@
     </div>
     <!-- Full Page Intro -->
     <!--Footer-->
+    <?php include('includes/footer.php'); ?>
 
-    <footer class="page-footer text-center font-small wow fadeIn">
-
-        <!-- Social icons -->
-        <!-- <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus-g mr-3"></i>
-      </a>
-
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
-    </div> -->
-        <!-- Social icons -->
-
-        <!--Copyright-->
-        <div class="footer-copyright py-3">
-            © 2019 Copyright:
-            <a href="www.skillmonks.in" target="_blank">skillmonks.com </a>
-            All Rights Reserved
-        </div>
-        <!--/.Copyright-->
-
-    </footer>
     <script>
         $(function() {
             $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
