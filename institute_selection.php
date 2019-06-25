@@ -80,7 +80,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
 }
 
 ?>
-                <div class="row">
+                <div class="row fadeIn animated">
                     <div class="col-md-3">
                     </div>
                     <div class="col-md-6 register-pop">

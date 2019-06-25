@@ -81,9 +81,11 @@
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
+
     <div class="row">
+    <div class="col-12">Python</div>
       <?php
-      $query = "SELECT * FROM institute_data";
+      $query = "SELECT * FROM institute_data WHERE course = 'Python'";
       $query_run = mysqli_query($connection, $query);
       ?>
       <?php
@@ -91,10 +93,98 @@
         while ($row = mysqli_fetch_assoc($query_run)) {
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
+            <div class="row  card-course h-95 mb-0">
               <!-- Featured image -->
               <div class="">
-                <div class=" overlay rounded  mb-2 mt-0">
+                <div class=" overlay rounded  mb-2 mt-2">
+                  <img class="img-fluid" src="img/jav.jpg" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <h6 class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></h6>
+                </a>
+                <!-- Post title -->
+                <h4 class="font-weight-bold mb-1"><strong><?php echo $row['institute']; ?></strong></h4>
+                <p class="mb-1"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text">Nam libero tempore, cum soluta nobis est </p>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+      }
+    } else {
+      echo "No record found";
+    }
+    ?>
+    </div>
+    <div class="row">
+        <div class="col-12">Java</div>
+      <?php
+      $query = "SELECT * FROM institute_data WHERE course = 'Java'";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-2">
+                  <img class="img-fluid" src="img/jav.jpg" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <h6 class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></h6>
+                </a>
+                <!-- Post title -->
+                <h4 class="font-weight-bold mb-1"><strong><?php echo $row['institute']; ?></strong></h4>
+                <p class="mb-1"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text">Nam libero tempore, cum soluta nobis est </p>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+      }
+    } else {
+      echo "No record found";
+    }
+    ?>
+    </div>
+    <div class="row">
+        <div class="col-12">All courses</div>
+      <?php
+      $query = "SELECT * FROM institute_data ";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-2">
                   <img class="img-fluid" src="img/jav.jpg" alt="Sample image">
                   <a>
                     <div class="mask rgba-white-slight"></div>

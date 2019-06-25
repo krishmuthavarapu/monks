@@ -311,6 +311,8 @@ form#frm {
   padding: 3px;
   margin: 5px;
   /* border-radius: 8px; */
+  background: whitesmoke;
+
   box-shadow: 1px 1px 5px 2px #b7b7b7;
 }
 
