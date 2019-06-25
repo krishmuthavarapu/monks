@@ -100,12 +100,12 @@
 
                 <!--Grid row-->
                 <div class="row wow ">
-                <div class="col-12 mt-2 text-center mb-3">
-                            <h1 class="">Common <span class="skc">Application Form</span></h1>
-                        </div>
+                    <div class="col-12 mt-2 text-center mb-3">
+                        <h1 class="">Common <span class="skc">Application Form</span></h1>
+                    </div>
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-6 mb-4   text-center text-md-left  animated fadeIn">
-                    <div class="col-12 mt-4 text-center mb-2">
+                        <div class="col-12 mt-4 text-center mb-2">
                             <h1 class="">Random Title</h1>
                         </div>
 
@@ -175,6 +175,18 @@
                         <div class=" text-center pt-3  " style="    border-radius: 8px;background: #060501b5;">
                             <h2 class=" text-white " style="font-weight:400"> Application Form</h2>
                             <hr class="hr-cus">
+                            <?php
+
+                            if (isset($_POST['submit'])) {
+                                $mysqltime = date_create()->format('Y-m-d H:i:s');
+                                $sql = "INSERT INTO student_data(username, number, email, passing_year, qualification, course_interested, city, date)
+VALUES ('" . $_POST["username"] . "', '" . $_POST["number"] . "', '" . $_POST["email"] . "', '" . $_POST["passing_year"] . "', '" . $_POST["qualification"] . "', '" . $_POST["course_interested"] . "', '" . $_POST["city"] . "', '" . $mysqltime . "')";
+
+                                $result = mysqli_query($connection, $sql);
+                                echo "<script>window.location.href='student_contact.php'</script>";
+                            }
+
+                            ?>
                             <form action="" method="post" class="text-center  pr-lg-5 pl-lg-5 pt-lg-3 pb-lg-3 p-3 ">
 
                                 <!-- <p class="h4 mb-4 text-white">Sign in</p> -->
@@ -183,13 +195,13 @@
                                 <input type="text" id="" class="form-control mb-3 " name="username" placeholder="Your Name" required>
                                 <input type="text" id="" class="form-control mb-3" name="number" placeholder="Mobile Number" required>
                                 <input type="email" id="" class="form-control mb-3" name="email" placeholder="E-Mail" required>
-                                <input type="text" id="" class="form-control mb-3" name="" placeholder="Year of passing" required>
+                                <input type="text" id="" class="form-control mb-3" name="passing_year" placeholder="Year of passing" required>
                                 <input type="text" id="" class="form-control mb-3" name="qualification" placeholder="Qualification" required>
-                                <input type="text" id="" class="form-control mb-3" name="" placeholder="Course Interested In" required>
+                                <input type="text" id="" class="form-control mb-3" name="course_interested" placeholder="Course Interested In" required>
                                 <input type="text" id="" class="form-control mb-3" name="city" placeholder="City" required>
 
                                 <!-- Sign in button -->
-                                <button class="btn btn-info skbc btn-block my-4" name="save" type="submit">Sign Up</button>
+                                <button class="btn btn-info skbc btn-block my-4" name="submit" type="submit">Sign Up</button>
 
                             </form>
                             <!-- Default form login -->

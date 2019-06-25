@@ -176,17 +176,17 @@ if(isset($_POST['update_institute']))
 
 
 // delete student details
-if(isset($_POST['delete_jd']))
+if(isset($_POST['delete_sd']))
 {
     $id = $_POST['delete_id'];
-    $query = "DELETE FROM job_apply WHERE Id = '$id'";
+    $query = "DELETE FROM student_data WHERE Id = '$id'";
     $query_run = mysqli_query($connection,$query);
     if($query_run){
         $_SESSION['success']="Your data is deleted";
-        header('Location: userdata.php');
+        header('Location: student_data.php');
     }else{
      $_SESSION['status']="Your data NOT deleted";
-     header('Location: userdata.php');    
+     header('Location: student_data.php');    
      }
     }
 ?>

@@ -81,7 +81,7 @@
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
-    <div class="row">
+    <div class="row mb-4">
       <?php
       $query = "SELECT * FROM institute_data";
       $query_run = mysqli_query($connection, $query);
@@ -133,7 +133,7 @@
   <!-- modal -->
   <!-- Modal -->
   <!-- add class dis -->
-  <div class="modal fade " id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal dis" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content bgin">
         <div class="modal-body" id="mbody">

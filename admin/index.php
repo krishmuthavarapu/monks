@@ -75,10 +75,10 @@ include('db/config.php');?>
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">No of Students</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
                       <?php
-                        // $query = "SELECT id FROM job_apply ORDER BY id";
-                        // $query_run=mysqli_query($connection,$query); 
-                        // $row = mysqli_num_rows($query_run);
-                        // echo '<h1> '.$row.' </h1>'
+                        $query = "SELECT id FROM student_data ORDER BY id";
+                        $query_run=mysqli_query($connection,$query); 
+                        $row = mysqli_num_rows($query_run);
+                        echo '<h1> '.$row.' </h1>'
                         ?>
                       </div>
                     </div>

@@ -27,18 +27,23 @@ include('includes/header.php'); ?>
     </div>
     <div class="row">
         <?php
-        $query = "SELECT * FROM job_apply";
+        $query = "SELECT * FROM student_data";
         $query_run = mysqli_query($connection, $query);
         ?>
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
+               
+
                         <th>ID</th>
                         <th>Username</th>
-                        <th>Email</th>
                         <th>Number</th>
-                        <th>Resume</th>
+                        <th>Email</th>
+                        <th>Passing Year</th>
+                        <th>Qualification</th>
+                        <th>Course Interested</th>
+                        <th>City</th>
                         <th>Date</th>
                         <th>Delete</th>
 
@@ -50,16 +55,20 @@ include('includes/header.php'); ?>
                         while ($row = mysqli_fetch_assoc($query_run)) {
                             ?>
                             <tr>
+                            
                                 <td><?php echo $row['id']; ?></td>
-                                <td><?php echo $row['name']; ?></td>
-                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['username']; ?></td>
                                 <td><?php echo $row['number']; ?></td>
-                                <td><?php echo $row['file_name']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['passing_year']; ?></td>
+                                <td><?php echo $row['qualification']; ?></td>
+                                <td><?php echo $row['course_interested']; ?></td>
+                                <td><?php echo $row['city']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
                                 <td>
                                     <form action="code.php" method="POST">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['id'];?>">
-                                    <button class="btn-danger " name="delete_jd" type="submit">Delete</button>
+                                    <button class="btn-danger " name="delete_sd" type="submit">Delete</button>
                                     </form>
                                 </td>
 

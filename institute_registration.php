@@ -145,8 +145,8 @@
 
                 if (isset($_POST['submit'])) {
                     $mysqltime = date_create()->format('Y-m-d H:i:s');
-                    $sql = "INSERT INTO institute_data(institute, course, location, batch_date, email, number, date)
-VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["location"] . "', '" . $_POST["batch_date"] . "', '" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $mysqltime . "')";
+                    $sql = "INSERT INTO institute_registration(institute_name, email, number, password, city, location, website, date)
+VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $_POST["password"] . "', '" . $_POST["city"] . "', '" . $_POST["location"] . "', '" . $_POST["website"] . "', '" . $mysqltime . "')";
 
                     $result = mysqli_query($connection, $sql);
                     echo "<script>window.location.href='course_view.php'</script>";
@@ -160,7 +160,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                         <div class="input-group-prepend ">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Institute Name:</span>
                         </div>
-                        <input type="text" name="institute" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="text" name="institute_name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
@@ -178,31 +178,31 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Password:</span>
                         </div>
-                        <input type="password" name="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Confirm Password:</span>
                         </div>
-                        <input type="password" name="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="password" name="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">City:</span>
                         </div>
-                        <input type="text" name="location" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="text" name="city" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Location:</span>
                         </div>
-                        <input type="text" name="batch_date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="text" name="location" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Institute's website:</span>
                         </div>
-                        <input type="text" name="batch_date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="text" name="website" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                    
 
