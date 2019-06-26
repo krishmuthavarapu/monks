@@ -134,21 +134,21 @@ if(isset($_POST['login_btn']))
         header('Location: login.php');
     }
 }
-// delete Institute data
+// delete Institute course data
 if(isset($_POST['delete_ud']))
 {
     $id = $_POST['delete_Id'];
     $query = "DELETE FROM institute_data WHERE id = '$id' ";
     $query_run = mysqli_query($connection, $query);
     if($query_run){
-        $_SESSION['success']="Your data is deleted";
+        $_SESSION['success']="Your course data is deleted";
         header('Location: institute_data.php');
     }else{
-     $_SESSION['status']="Your data NOT deleted";
+     $_SESSION['status']="Your course data NOT deleted";
      header('Location: institute_data.php');    
      }
     }
-// update code Institute data
+// update code ins course data
 if(isset($_POST['update_institute']))
 {
     $id = $_POST['edit_id'];
@@ -164,10 +164,10 @@ if(isset($_POST['update_institute']))
     $query_run = mysqli_query($connection,$query);
 
     if($query_run){
-           $_SESSION['success']="Your data is updated";
+           $_SESSION['success']="Your Course data is updated";
            header('Location: institute_data.php');
     }else{
-        $_SESSION['status']="Your data NOT updated";
+        $_SESSION['status']="Your Course data NOT updated";
         header('Location: institute_data.php');    }
 }
 
@@ -187,6 +187,45 @@ if(isset($_POST['delete_sd']))
     }else{
      $_SESSION['status']="Your data NOT deleted";
      header('Location: student_data.php');    
+     }
+    }
+
+
+    // update code institute registration data
+if(isset($_POST['update_institute_register']))
+{
+    $id = $_POST['edit_id'];
+    $institute = $_POST['edit_institute_name'];
+    $email = $_POST['edit_email'];
+    $number = $_POST['edit_number'];
+    $location = $_POST['edit_location'];
+    $city = $_POST['edit_city'];
+    $password = $_POST['edit_password'];
+    $website = $_POST['edit_website'];
+
+    $query = "UPDATE institute_registration SET institute_name = '$institute', email = '$email', number ='$number', password = '$password', city = '$city', location = '$location', website = '$website' WHERE id='$id'";
+    $query_run = mysqli_query($connection,$query);
+
+    if($query_run){
+           $_SESSION['success']="Your institute data is updated";
+           header('Location: institute_data.php');
+    }else{
+        $_SESSION['status']="Your institute data NOT updated";
+        header('Location: institute_data.php');    }
+}
+
+    // delete institute registration details
+    if(isset($_POST['delete_ins_reg_data']))
+{
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM institute_registration WHERE id = '$id'";
+    $query_run = mysqli_query($connection,$query);
+    if($query_run){
+        $_SESSION['success']="Your institute data is deleted";
+        header('Location: institute_data.php');
+    }else{
+     $_SESSION['status']="Your institute data NOT deleted";
+     header('Location: institute_data.php');    
      }
     }
 ?>

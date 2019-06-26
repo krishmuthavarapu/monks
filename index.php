@@ -6,17 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Skill Monks</title>
-    <link rel="icon shortcut" href="img/logo.png">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap" rel="stylesheet"> <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <?php include('includes/links.php'); ?>
+
 
     <style type="text/css">
         body {}
@@ -87,7 +78,7 @@
                 <!--Grid row-->
                 <div class="row pt-3 mt-3 pb-3">
                     <div class="col text-center ">
-                    <h2 class="h-rem" style="font-weight:400"><span class="p-1">Explore Here!</span></h2>
+                    <h2 class="h-rem" style="font-weight:400"><span class="p-1">Explore Now!</span></h2>
 
                         <!-- <h2 class="h-rem" style="font-weight:400"><span class="p-1">Welcome to</span><span class="p-1" style="color: #01783d;">SkillMonks</span></h2> -->
                         <!-- <h2 class="h2-responsive weight-400"><span class="skbc p-1">Welcome </span><span style="" class="p-1 bg-dark text-white"> to SkillMonks</span></h2> -->
@@ -135,18 +126,8 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-        // Animations initialization
-        // new WOW().init();
-    </script>
+    <?php include('includes/scripts.php'); ?>
+
 </body>
 
 </html>

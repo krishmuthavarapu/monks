@@ -88,6 +88,66 @@ include('includes/header.php'); ?>
             </table>
         </div>
     </div>
+    <div class="row">
+      <h2>Seacrched student data</h2>
+    </div>
+    <div class="row">
+        <?php
+        $query = "SELECT * FROM searched_students";
+        $query_run = mysqli_query($connection, $query);
+        ?>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+               
+
+                        <th>ID</th>
+                        <th>Student Name</th>
+                        <th>Number</th>
+                        <th>Email</th>
+                        <th>Qualification</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (mysqli_num_rows($query_run) > 0) {
+                        while ($row = mysqli_fetch_assoc($query_run)) {
+                            ?>
+                            <tr>
+                            
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['name']; ?></td>
+                                <td><?php echo $row['number']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['qualification']; ?></td>
+                                <td><?php echo $row['date']; ?></td>
+                                <td>
+                                    <form action="code.php" method="POST">
+                                    <input type="hidden" name="delete_id" value="<?php echo $row['id'];?>">
+                                    <button class="btn-danger " name="delete_sd" type="submit">Delete</button>
+                                    </form>
+                                </td>
+
+
+                                <!-- <td><button class="btn-success " type="submit">Edit</button></td>
+                                                        <td><button class="btn-danger " type="submit">Delete</button></td> -->
+
+
+                            </tr>
+                        <?php
+                    }
+                } else {
+                    echo "No record found";
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 </div>
 <!-- End of Page Wrapper -->

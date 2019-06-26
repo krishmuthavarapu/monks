@@ -6,17 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Skill Monks</title>
-    <link rel="icon shortcut" href="img/logo.png">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap" rel="stylesheet"> <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <?php include('includes/links.php'); ?>
+
 
     <!-- <style type="text/css">
         @media (max-width: 740px) {
@@ -83,9 +74,9 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                 <div class="row fadeIn animated">
                     <div class="col-md-3">
                     </div>
-                    <div class="col-md-6 register-pop">
+                    <div class="col-md-5 register-pop">
                         <div class="text-center">
-                        <h3 class="text-white" >Demo Information</h3>
+                        <h3 class="text-white" >Course Information</h3>
                         </div>
                         <hr class="skbc">
                   
@@ -120,7 +111,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                             </div>
 
                             <div class="form-group" style="text-align: center">
-                              <input type="submit" name="submit" class="btn skbc" value="Submit" />
+                              <input type="submit" name="submit" class="btn btn-rounded skbc" value="Submit" />
                             </div>
                           </form>
                         </div>
@@ -128,7 +119,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                     </div>
                   </div>
                 </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 
                     </div>
                 </div>
@@ -153,18 +144,8 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-        // Animations initialization
-        // new WOW().init();
-    </script>
+    <?php include('includes/scripts.php'); ?>
+
 </body>
 
 </html>

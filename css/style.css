@@ -15,7 +15,14 @@ body {
     font-size: 12px;
   }
 }
-
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
 .mask {
   background-color: rgba(0, 0, 0, 0.123);
 }
@@ -313,7 +320,7 @@ form#frm {
   /* border-radius: 8px; */
   background: whitesmoke;
 
-  box-shadow: 1px 1px 5px 2px #b7b7b7;
+  box-shadow: 0px 0px 4px 0px #B7B795
 }
 
 .card-head:hover .card-course {
@@ -345,16 +352,21 @@ form#frm {
 }
 
 .register-pop {
-  background: -webkit-linear-gradient(left, #070a085e, #1f222585);
-  padding: 2em;
+  background: #000000a1;   
+   padding: 2em;
 }
 
-#profile-tab {
+/* #profile-tab {
   font-size: 25px;
   color: white;
-}
+} */
 .dis{
    display:block;
-   background: #bfbfbfd4;
+   background: #bfbfbfa1;
 }
 
+@media (min-width: 576px){
+.cus-modal-dialog {
+    max-width: 410px;
+    margin: 1.75rem auto;
+}}

@@ -6,55 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Skill Monks</title>
-    <link rel="icon shortcut" href="img/logo.png">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans&display=swap" rel="stylesheet"> <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- <style type="text/css">
-        @media (max-width: 740px) {
-
-            html,
-            body,
-            header,
-            .view {
-                height: 1300px;
-            }
-        }
-
-        @media (min-width: 700px) and (max-width: 990px) {
-
-            html,
-            body,
-            header,
-            .view {
-                height: 1200px;
-            }
-        }
-
-        @media (min-width: 800px) and (max-width: 850px) {
-
-            html,
-            body,
-            header,
-            .view {
-                height: 1200px;
-            }
-        }
-
-        @media (min-width: 800px) and (max-width: 850px) {
-            .navbar:not(.top-nav-collapse) {
-                background: #1C2331 !important;
-            }
-        }
-    </style> -->
+    <?php include('includes/links.php'); ?>
 </head>
 
 <body>
@@ -178,13 +130,13 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Password:</span>
                         </div>
-                        <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="password" name="password" id="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Confirm Password:</span>
                         </div>
-                        <input type="password" name="" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="password" name="" class="form-control" id="confirm_password" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
@@ -204,7 +156,7 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
                         </div>
                         <input type="text" name="website" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
-                   
+
 
                     <button type="submit" name="submit" class="btn btnclr">Submit</button>
                 </form>
@@ -217,7 +169,21 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
     <!-- Full Page Intro -->
     <!--Footer-->
     <?php include('includes/footer.php'); ?>
+    <script>
+        var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password");
 
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
     <script>
         $(function() {
             $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
@@ -227,18 +193,8 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Initializations -->
-    <script type="text/javascript">
-        // Animations initialization
-        // new WOW().init();
-    </script>
+    <?php include('includes/scripts.php'); ?>
+
 </body>
 
 </html>
