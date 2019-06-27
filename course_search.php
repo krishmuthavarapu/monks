@@ -246,7 +246,80 @@
   <!-- modal -->
   <!-- Modal -->
   <!-- add class dis -->
-  
+  <div class="modal dis" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog cus-modal-dialog" role="document">
+      <div class="modal-content bgin">
+        <div class="modal-body" id="mbody">
+          <div class="container register-pop">
+            <div class="row">
+              <div class="col-md-12 text-center text-white">
+                <h4>Sign Up</h4>
+                <br>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row register-form">
+                      <div class="col-md-12" id="">
+                      <script type="text/javascript">
+                      function post()
+                      {
+                           var name = document.getElementById("name").value;
+                           var number = document.getElementById("number").value;
+                           var email = document.getElementById("email").value;
+                           var qualification = document.getElementById("qualification").value;
+                           if(name && number && email && qualification)
+                           {
+                             $.ajax
+                             ({
+                              type: 'post',
+                              url: 'code_stu.php',
+                              data:
+                              {
+                                user_name:name,
+                                user_number:number,
+                                user_email:email,
+                                user_qualification:qualification
+                              },
+                              success: function(response)
+                              {
+                                $('.modal').removeClass('dis').addClass('fade');                              }                           
+                             });
+                           }
+                           return false;
+                      }
+                      </script>
+                        <form  method="post" onsubmit="return post();">
+                          <div class="form-group" >
+                            <input type="text" id="name" class="form-control" placeholder="Your Name"  required />
+                          </div>
+                          <div class="form-group">
+                            <input type="text" id="number" class="form-control" placeholder="Mobile Number" required />
+                          </div>
+                          <div class="form-group">
+                            <input type="text" id="email" class="form-control" placeholder="Your Email"  required />
+                          </div>
+                          <div class="form-group">
+                            <input type="text" id="qualification" class="form-control" placeholder="Qualification"  required />
+                          </div>
+
+                          <div class="form-group" style="text-align: center">
+                            <input type="submit" onclick="" id="submit" name="submit" class="btn btn-rounded  skbc"  />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script>
     $(function() {

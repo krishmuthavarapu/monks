@@ -50,6 +50,8 @@
 
 <body>
   <!-- Full Page Intro -->
+  <?php include('includes/staytuned.php'); ?>
+
   <div class=" full-page-intro bg-img ">
 
     <!-- Mask & flexbox options-->
@@ -74,7 +76,8 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
         <div class="row fadeIn animated">
           <div class="col-lg-6 col-md-5 mb-4   text-center text-md-left  animated fadeIn">
             <div class="col-12 mt-4 text-center mb-2">
-              <h1 class="">Random Title</h1>
+              <h1 class="">We Partner Your Growth</h1>
+              <P>We help you with easier reach to students and working professional lead & operation management and higher conversation</P>
             </div>
 
             <div class="row text-center card-caf mt-5">
@@ -83,11 +86,10 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
               <div class="col-lg-6 col-md-12 mb-lg-0  mb-4 zoom ">
 
                 <!--Excerpt-->
-                <div class="card-body pt-3 pb-3">
+                <div class="card-body h-card pt-3 pb-3">
 
-                  <i class="fas fa-book fa-3x text-white"></i>
-                  <h5 class="font-weight-bold my-2">Support</h5>
-                  <p class="mb-0">Lorem ipsum dolor sit amet
+                  <img src="img/icons/qui.png" width="50px">
+                  <p class="mb-0">Quality Lead Funnel
                   </p>
 
                 </div>
@@ -98,11 +100,10 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
               <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
 
                 <!--Excerpt-->
-                <div class="card-body pt-3 pb-3">
+                <div class="card-body h-card pt-3 pb-3">
 
-                  <i class="fas fa-chart-area fa-3x red-text"></i>
-                  <h5 class="font-weight-bold my-2">Support</h5>
-                  <p class="mb-0">Lorem ipsum dolor sit amet
+                  <img src="img/icons/aum1.png" width="40px">
+                  <p class="mb-0">Auto Machine Support
                   </p>
 
                 </div>
@@ -111,11 +112,10 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
               <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
 
                 <!--Excerpt-->
-                <div class="card-body pt-3 pb-3">
+                <div class="card-body h-card pt-3 pb-3">
 
-                  <i class="far fa-comments fa-3x orange-text"></i>
-                  <h5 class="font-weight-bold my-2">Support</h5>
-                  <p class="mb-0">Lorem ipsum dolor sit amet
+                  <img src="img/icons/com.png" width="50px">
+                  <p class="mb-0">Digital Delivery Systems
                   </p>
 
                 </div>
@@ -124,11 +124,10 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
               <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
 
                 <!--Excerpt-->
-                <div class="card-body pt-3 pb-3">
+                <div class="card-body h-card pt-3 pb-3">
 
-                  <i class="far fa-comments fa-3x text-white"></i>
-                  <h5 class="font-weight-bold my-2">Support</h5>
-                  <p class="mb-0">Lorem ipsum dolor sit amet
+                  <img src="img/icons/analy.png" width="50px">
+                  <p class="mb-0">Analytics and Industry Insights
                   </p>
 
                 </div>
@@ -137,46 +136,48 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
             </div>
           </div>
           <div class="col-lg-1 col-md-1"></div>
-          <div class="col-md-6 col-lg-5 register-pop">
-            <div class="text-center">
-              <h3 class="text-white">Course Information</h3>
-            </div>
-            <hr class="skbc">
+          <div class="col-md-6 col-lg-5 ">
+            <div class="register-pop mt-4">
+              <div class="text-center">
+                <h3 class="text-white">Declare a Batch</h3>
+              </div>
+              <hr class="skbc">
 
-            <br>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="row register-form">
-                  <div class="col-md-12" id="right">
+              <br>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="row register-form">
+                    <div class="col-md-12" id="right">
 
-                    <form action="" method="post">
-                      <div class="form-group">
-                        <input type="text" name="institute" class="form-control" placeholder="Institute Name" value="" required="" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="course" class="form-control" placeholder="course" value="" required="" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="batch_date" class="form-control" placeholder="Batch Date" value="" required="" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="demo_date" class="form-control" placeholder="Demo Date" value="" required="" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="location" class="form-control" placeholder="location" value="" required="" />
-                      </div>
+                      <form action="" method="post">
+                        <div class="form-group">
+                          <input type="text" name="institute" class="form-control" placeholder="Institute Name" value="" required="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="course" class="form-control" placeholder="course" value="" required="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="batch_date" class="form-control" placeholder="Batch Date" value="" required="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="demo_date" class="form-control" placeholder="Demo Date" value="" required="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="location" class="form-control" placeholder="location" value="" required="" />
+                        </div>
 
-                      <div class="form-group">
-                        <input type="text" name="email" class="form-control" placeholder="email" value="" required="" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required="" />
-                      </div>
+                        <div class="form-group">
+                          <input type="text" name="email" class="form-control" placeholder="email" value="" required="" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required="" />
+                        </div>
 
-                      <div class="form-group" style="text-align: center">
-                        <input type="submit" name="submit" class="btn btn-rounded skbc" value="Submit" />
-                      </div>
-                    </form>
+                        <div class="form-group" style="text-align: center">
+                          <input type="submit" name="submit" class="btn btn-rounded skbc" value="Submit" />
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>

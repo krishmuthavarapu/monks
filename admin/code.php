@@ -189,7 +189,21 @@ if(isset($_POST['delete_sd']))
      header('Location: student_data.php');    
      }
     }
+    // delete serched student details
 
+if(isset($_POST['delete_searched_student']))
+{
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM searched_students WHERE Id = '$id'";
+    $query_run = mysqli_query($connection,$query);
+    if($query_run){
+        $_SESSION['success']="searched student data is deleted";
+        header('Location: student_data.php');
+    }else{
+     $_SESSION['status']="searched student data NOT deleted";
+     header('Location: student_data.php');    
+     }
+    }
 
     // update code institute registration data
 if(isset($_POST['update_institute_register']))

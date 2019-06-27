@@ -36,6 +36,7 @@ include('includes/header.php'); ?>
 					<form method="POST" action="photo_update.php" enctype="multipart/form-data">
 						<div class="form-group">
 						<input type="hidden" name="edit_id" value="<?php echo $row['id'] ?>">
+						<h4><?php echo $row['institute'] ?></h4>
 
 							<img src='<?php echo "$image" ?>'width='20%'><br>
 							File Name: <input type="text" name="name" placeholder="file name" /><br />

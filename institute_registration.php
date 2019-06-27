@@ -26,51 +26,55 @@
                         <div class="col-lg-12 col-md-12 mt-4 text-center text-md-left">
 
                             <div class="col-12 mt-4 text-center">
-                                <h1 class="">Institute <span class="skc">Application Form</span></h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam expedita dignissimos, accusamus impedit voluptas dolorum optio reprehenderit necessitatibus atque adipisci labore dolore iste tempora veniam molestias tenetur quasi? Deserunt, temporibus.</p>
+                                <h1 class="">We Partner Your Growth</h1>
+                                <P>We help you with easier reach to students and working professional lead & operation management and higher conversation</P>
                             </div>
 
                             <div class="row text-center card-caf mt-4 animated fadeIn">
 
                                 <!-- Grid column -->
-                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+                                <div class="col-lg-6 col-md-12 mb-lg-0 zoom">
 
                                     <!--Excerpt-->
-                                    <div class="card-body ">
-                                        <h4 class="h3-responsive my-3">Title of the news</h4>
-                                        <p class="">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.
+                                    <div class="card-body h-card">
+
+                                        <img src="img/icons/qui.png" class="mt-2" width="50px">
+                                        <p class="mb-0">Quality Lead Funnel
                                         </p>
                                     </div>
                                 </div>
                                 <!-- Grid column -->
 
                                 <!-- Grid column -->
-                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+                                <div class="col-lg-6 col-md-12 mb-lg-0  zoom">
 
                                     <!--Excerpt-->
-                                    <div class="card-body ">
-                                        <h4 class="h3-responsive my-3">Title of the news</h4>
-                                        <p class="">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.
+                                    <div class="card-body h-card ">
+                                        <img src="img/icons/aum1.png" class="mt-2" width="40px">
+                                        <p class="mb-0">Auto Machine Support
                                         </p>
                                     </div>
                                 </div>
                                 <!-- Grid column -->
-                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+                                <div class="col-lg-6 col-md-12 mb-lg-0 zoom">
 
                                     <!--Excerpt-->
-                                    <div class="card-body ">
-                                        <h4 class="h3-responsive my-3">Title of the news</h4>
-                                        <p class="">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.
+                                    <div class="card-body h-card">
+
+                                        <img src="img/icons/com.png" class="mt-2" width="50px">
+                                        <p class="mb-0">Digital Delivery Systems
                                         </p>
+
                                     </div>
                                 </div>
                                 <!-- Grid column -->
-                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+                                <div class="col-lg-6 col-md-12 mb-lg-0  zoom">
 
                                     <!--Excerpt-->
-                                    <div class="card-body ">
-                                        <h4 class="h3-responsive my-3">Title of the news</h4>
-                                        <p class="">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.
+                                    <div class="card-body h-card">
+
+                                        <img src="img/icons/analy.png" class="mt-2" width="50px">
+                                        <p class="mb-0">Analytics and Industry Insights
                                         </p>
                                     </div>
                                 </div>
@@ -101,7 +105,7 @@
 VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $_POST["password"] . "', '" . $_POST["city"] . "', '" . $_POST["location"] . "', '" . $_POST["website"] . "', '" . $mysqltime . "')";
 
                     $result = mysqli_query($connection, $sql);
-                    echo "<script>window.location.href='course_view.php'</script>";
+                    echo "<script>window.location.href='thankq.php'</script>";
                 }
 
                 ?>

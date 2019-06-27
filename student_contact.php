@@ -92,15 +92,16 @@
                 <!--Grid row-->
                 <div class="row wow ">
                     <div class="col-12 mt-2 text-center mb-3">
-                        <h1 class="">Common <span class="skc">Application Form</span></h1>
+                        <h1 class="skc">Common <span class="text-dark">Application Form</span></h1>
                     </div>
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-6 mb-4   text-center text-md-left  animated fadeIn">
-                        <div class="col-12 mt-4 text-center mb-2">
-                            <h1 class="">Random Title</h1>
+                        <div class="col-12 mt-4 text-center mb-0">
+                            <h2 class="h2-responsive">Powering Your Career Growth</h2>
+                            <p class="text-dark">We Help Skill Seekers in Discovering their True Mentors and Fulfilling their Skill in a Personalised Way</p>
                         </div>
 
-                        <div class="row text-center card-caf mt-5">
+                        <div class="row text-center card-caf mt-3">
 
                             <!-- Grid column -->
                             <div class="col-lg-6 col-md-12 mb-lg-0  mb-4 zoom ">
@@ -108,10 +109,9 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                    <i class="fas fa-book fa-3x text-white"></i>
-                                    <h5 class="font-weight-bold my-2">Support</h5>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet
-                                    </p>
+                                <img src="img/icons/com.png" width="50px">
+                                    <!-- <h5 class="font-weight-bold my-2">Support</h5> -->
+                                    <p class="mb-0 mt-2">Personalised Career Guidance</p>
 
                                 </div>
                             </div>
@@ -123,10 +123,8 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                    <i class="fas fa-chart-area fa-3x red-text"></i>
-                                    <h5 class="font-weight-bold my-2">Support</h5>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet
-                                    </p>
+                                <img src="img/icons/money.png" width="50px">
+                                    <p class="mb-0 mt-2">Assured Quality with Money Back Guarantee</p>
 
                                 </div>
                             </div>
@@ -136,10 +134,8 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                    <i class="far fa-comments fa-3x orange-text"></i>
-                                    <h5 class="font-weight-bold my-2">Support</h5>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet
-                                    </p>
+                                <img src="img/icons/offer.png" width="50px">
+                                    <p class="mb-0 mt-2">Best Discount on Fee</p>
 
                                 </div>
                             </div>
@@ -149,10 +145,30 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                    <i class="far fa-comments fa-3x text-white"></i>
-                                    <h5 class="font-weight-bold my-2">Support</h5>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet
-                                    </p>
+                                <img src="img/icons/tution.png" width="50px">
+                                    <p class="mb-0 mt-2">Get Connected with Best Inclass Training Companies</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                <img src="img/icons/qua.png" width="50px">
+
+                                    <p class="mb-0 mt-2">App that Gets Keeps You Posted on Industry Trends and Opportunities</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                <img src="img/icons/discount.png" width="50px">
+
+                                    <p class="mb-0 mt-2">Zero Percent Interest Loan Options</p>
 
                                 </div>
                             </div>
@@ -161,10 +177,10 @@
                     </div>
                     <div class="col-lg-1 d-none d-lg-block"></div>
                     <!-- <div class="col-lg-1 col-md-1"></div> -->
-                    <div class="col-lg-5 col-md-6 mb-3 animated fadeIn">
+                    <div class="col-lg-5 col-md-6 mb-3  animated fadeIn">
                         <!-- Default form login -->
-                        <div class=" text-center pt-3  " style="    border-radius: 8px;background: #060501b5;">
-                            <h2 class=" text-white " style="font-weight:400"> Application Form</h2>
+                        <div class=" text-center pt-3  mt-5" style="    border-radius: 8px;background: #060501b5;">
+                            <h2 class=" text-white " style="font-weight:400"> Get Connected Now!</h2>
                             <hr class="hr-cus">
                             <?php
 
@@ -174,7 +190,7 @@
 VALUES ('" . $_POST["username"] . "', '" . $_POST["number"] . "', '" . $_POST["email"] . "', '" . $_POST["passing_year"] . "', '" . $_POST["qualification"] . "', '" . $_POST["course_interested"] . "', '" . $_POST["city"] . "', '" . $mysqltime . "')";
 
                                 $result = mysqli_query($connection, $sql);
-                                echo "<script>window.location.href='student_contact.php'</script>";
+                                echo "<script>window.location.href='thankq.php'</script>";
                             }
 
                             ?>

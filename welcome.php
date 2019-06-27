@@ -60,6 +60,7 @@
 <body>
 
     <!-- Navbar -->
+    <?php include('includes/staytuned.php'); ?>
 
     <!-- Full Page Intro -->
     <div class=" full-page-intro bg-img ">
@@ -78,28 +79,29 @@
                         <div>
                             <h2 class="h2-responsive weight-400">What do you want to <br> <span class="skc">learn today</span></h2>
                             <form class="form-inline md-form mr-auto mb-4">
-                                <input class="form-control mr-sm-2" type="text" style="border-bottom: 2px solid #01783d;" placeholder="Search your course" aria-label="Search">
-                                <button class="btn skbc btn-rounded  my-0"  onclick="location.href='course_view.php'" type="button">Search</button>
+                                <input class="form-control mr-sm-2" type="text" style="border-bottom: 2px solid #01783d;" placeholder="Enter Course Name" aria-label="Search">
+                                <button class="btn skbg btn-rounded  my-0"  onclick="location.href='course_search.php'" type="button">Search</button>
                             </form>
                         </div>
                     </div>
                     <div class=" col-lg-6 text-center sel-card animated fadeIn">
                         <div>
-                            <h2 class="h2-responsive text-white weight-400"><span class="skc">Contact Application Form</span></h2>
-                            <button onclick="location.href='student_contact.php'" class="btn btn-success skbc mt-4 mb-4 btn-rounded ">Sign Up</button>
+                            <h2 class="h2-responsive text-dark weight-400"><span class="skc">Common </span>Application Form</h2>
+                            <button onclick="location.href='student_contact.php'" class="btn btn-success skbg mt-4 mb-4 btn-rounded ">Sign Up</button>
                         </div>
                         <div>
                             <div class="mb-4   text-center text-md-left">
                                 <div class="row text-center card-sel mt-4">
                                     <div class="col-12">
-                                        <h2 class="h1-responsive text-white weight-400"><span>Heading</span></h2>
+                                        <h2 class="h1-responsive text-white weight-400"><span>Why Skill Monks</span></h2>
                                     </div>
                                     <!-- Grid column -->
                                     <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                            <h4 class="h4-responsive my-3">Title of the news</h4>
+                                        <img src="img/icons/tution.png" width="50px">
+                                            <p class=" my-3">Get Connected with Best Inclass Training Companies</p>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
@@ -109,7 +111,8 @@
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                            <h4 class="h4-responsive my-3">Title of the news</h4>
+                                        <img src="img/icons/money.png" width="50px">
+                                            <p class=" my-3">Quality Assured with Money Back Guarantee</p>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
@@ -117,15 +120,17 @@
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                            <h4 class="h4-responsive my-3">Title of the news</h4>
+                                        <img src="img/icons/offer.png" width="50px">
+                                        <p class=" my-3">Best Discount on Fee</p>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
-                                    <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+                                    <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom ">
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                            <h4 class="h4-responsive my-3">Title of the news</h4>
+                                        <img src="img/icons/qua.png" width="50px">
+                                            <p class="p my-3">App that Gets Keeps You Posted on Industry Trends and Opportunities</p>
                                         </div>
                                     </div>
 
