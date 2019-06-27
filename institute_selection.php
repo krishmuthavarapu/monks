@@ -76,8 +76,8 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
         <div class="row fadeIn animated">
           <div class="col-lg-6 col-md-5 mb-4   text-center text-md-left  animated fadeIn">
             <div class="col-12 mt-4 text-center mb-2">
-              <h1 class="">We Partner Your Growth</h1>
-              <P>We help you with easier reach to students and working professional lead & operation management and higher conversation</P>
+              <h1 class="">We Partner In Your Growth.</h1>
+              <P>We help you with easier reach to students and working professionals, lead & operation management, and higher conversations.</P>
             </div>
 
             <div class="row text-center card-caf mt-5">
@@ -103,7 +103,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                 <div class="card-body h-card pt-3 pb-3">
 
                   <img src="img/icons/aum1.png" width="40px">
-                  <p class="mb-0">Auto Machine Support
+                  <p class="mb-0 pt-2">Automation Support
                   </p>
 
                 </div>
@@ -115,7 +115,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                 <div class="card-body h-card pt-3 pb-3">
 
                   <img src="img/icons/com.png" width="50px">
-                  <p class="mb-0">Digital Delivery Systems
+                  <p class="mb-0 pt-2">Digital Delivery Systems
                   </p>
 
                 </div>
@@ -127,7 +127,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                 <div class="card-body h-card pt-3 pb-3">
 
                   <img src="img/icons/analy.png" width="50px">
-                  <p class="mb-0">Analytics and Industry Insights
+                  <p class="mb-0 pt-2">Analytics and Industry Insights
                   </p>
 
                 </div>
@@ -139,7 +139,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
           <div class="col-md-6 col-lg-5 ">
             <div class="register-pop mt-4">
               <div class="text-center">
-                <h3 class="text-white">Declare a Batch</h3>
+                <h3 class="text-white pt-2">Declare a Batch!</h3>
               </div>
               <hr class="skbc">
 

@@ -26,8 +26,8 @@
                         <div class="col-lg-12 col-md-12 mt-4 text-center text-md-left">
 
                             <div class="col-12 mt-4 text-center">
-                                <h1 class="">We Partner Your Growth</h1>
-                                <P>We help you with easier reach to students and working professional lead & operation management and higher conversation</P>
+                                <h1 class="">We Partner In Your Growth.</h1>
+                                <P>We help you with easier reach to students and working professionals, lead & operation management, and higher conversations.</P>
                             </div>
 
                             <div class="row text-center card-caf mt-4 animated fadeIn">
@@ -39,7 +39,7 @@
                                     <div class="card-body h-card">
 
                                         <img src="img/icons/qui.png" class="mt-2" width="50px">
-                                        <p class="mb-0">Quality Lead Funnel
+                                        <p class="mb-0 pt-2">Quality Lead Funnel
                                         </p>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                     <!--Excerpt-->
                                     <div class="card-body h-card ">
                                         <img src="img/icons/aum1.png" class="mt-2" width="40px">
-                                        <p class="mb-0">Auto Machine Support
+                                        <p class="mb-0 pt-2">Automation Support
                                         </p>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                     <div class="card-body h-card">
 
                                         <img src="img/icons/com.png" class="mt-2" width="50px">
-                                        <p class="mb-0">Digital Delivery Systems
+                                        <p class="mb-0 pt-2">Digital Delivery Systems
                                         </p>
 
                                     </div>
@@ -74,7 +74,7 @@
                                     <div class="card-body h-card">
 
                                         <img src="img/icons/analy.png" class="mt-2" width="50px">
-                                        <p class="mb-0">Analytics and Industry Insights
+                                        <p class="mb-0 pt-2">Analytics and Industry Insights
                                         </p>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
                 ?>
                 <form id="frm" class="wdt-change" action="" method="post">
                     <br>
-                    <h2 class="text-center">Institute Application Form</h2>
+                    <h2 class="text-center">Institute Registration Form</h2>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend ">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Institute Name:</span>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2019 at 05:29 PM
+-- Generation Time: Jun 27, 2019 at 04:07 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.1.29
 
@@ -47,11 +47,9 @@ CREATE TABLE `institute_data` (
 
 INSERT INTO `institute_data` (`id`, `institute`, `course`, `location`, `batch_date`, `demo_date`, `email`, `number`, `photo`, `date`) VALUES
 (1, 'Prime Classes', 'Python', 'Madhapur', '01-07-2019', 'demo', 'info@prime.com', '987654321', 'prime classes.jpeg', '2019-06-24 09:36:17'),
-(11, 'Prime Classes', 'Python', 'wec', '01-07-2019', '', 'admin@scuti.co.in', '1234567', 'jav.jpeg', '2019-06-24 16:33:24'),
-(12, 'Prime Classes', 'Python', 'hyd', '01-07-2019', '29-06-2019', 'admin@skillmonks.com', '2134124', '', '2019-06-24 16:40:56'),
-(13, 'Lynda', 'MEAN', 'Gachibowli', '08-08-2019', '29-06-2019', 'test@gmail.com', '2134124', 'jav.jpeg', '2019-06-25 15:39:52'),
 (14, 'Skill Classes', 'Python', 'Gachibowli', '01-07-2019', '29-06-2019', 'test@gmail.com', '2134124', '', '2019-06-25 15:53:34'),
-(15, 'Prime Classes', 'Java', 'hyd', '01-07-2019', '29-06-2019', 'test@gmail.com', '2134124', '', '2019-06-26 11:49:56');
+(15, 'Prime Classes', 'Java', 'hyd', '01-07-2019', '29-06-2019', 'test@gmail.com', '2134124', '', '2019-06-26 11:49:56'),
+(16, 'Lynda', 'MEAN', 'wec', '08-08-2019', '29-06-2019', 'admin@admin.com', '123456', '', '2019-06-27 14:52:55');
 
 -- --------------------------------------------------------
 
@@ -77,8 +75,7 @@ CREATE TABLE `institute_registration` (
 
 INSERT INTO `institute_registration` (`id`, `institute_name`, `email`, `number`, `password`, `city`, `location`, `website`, `date`) VALUES
 (1, 'prime', 'test@gmail.com', '2134124', 'admin', 'Hyderabad', 'Gachibowli', 'www.primeclasses.com', '2019-06-25 15:46:43'),
-(2, 'prime', 'test@gmail.com', '2134124', '123', 'Hyderabad', 'Gachibowli', 'www.primeclasses.com', '2019-06-25 15:46:58'),
-(3, 'prime', 'admin@admin.com', '2134124', '123', 'Hyderabad', 'Gachibowli', 'www.primeclasses.com', '2019-06-25 15:53:56');
+(2, 'prime', 'test@gmail.com', '2134124', '123', 'Hyderabad', 'Gachibowli', 'www.primeclasses.com', '2019-06-25 15:46:58');
 
 -- --------------------------------------------------------
 
@@ -121,8 +118,9 @@ CREATE TABLE `searched_students` (
 --
 
 INSERT INTO `searched_students` (`id`, `name`, `email`, `number`, `qualification`, `date`) VALUES
-(1, 'sfds', 'gd@wewin.com', '12321e', 'B com', '2019-06-26 17:12:53'),
-(3, 'kumar', 'gd@wewin.com', '12321e', 'B com', '2019-06-26 17:15:05');
+(11, 'Sai', 'gd@wewin.com', '12321e', 'B com', '2019-06-27 09:50:32'),
+(12, 'wade', 'test@gmail.com', '123456', 'B tech', '2019-06-27 14:51:34'),
+(13, 'kumar', 'gd@wewin.com', '2134124', 'B com', '2019-06-27 15:22:48');
 
 -- --------------------------------------------------------
 
@@ -147,7 +145,8 @@ CREATE TABLE `student_data` (
 --
 
 INSERT INTO `student_data` (`id`, `username`, `number`, `email`, `passing_year`, `qualification`, `course_interested`, `city`, `date`) VALUES
-(2, 'test', '2134124', 'admin@admin.com', '2018', 'B tech', 'python', 'Hyderabad', '2019-06-25 15:21:43');
+(2, 'test', '2134124', 'admin@admin.com', '2018', 'B tech', 'python', 'Hyderabad', '2019-06-25 15:21:43'),
+(3, 'Gachibowli Divakar', '12321e', 'admin@admin.com', '2018', 'B com', 'python', 'Guntur', '2019-06-27 13:35:26');
 
 --
 -- Indexes for dumped tables
@@ -191,7 +190,7 @@ ALTER TABLE `student_data`
 -- AUTO_INCREMENT for table `institute_data`
 --
 ALTER TABLE `institute_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `institute_registration`
@@ -209,13 +208,13 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT for table `searched_students`
 --
 ALTER TABLE `searched_students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `student_data`
 --
 ALTER TABLE `student_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

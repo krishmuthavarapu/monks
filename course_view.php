@@ -71,28 +71,36 @@
   <div class="container mb-4">
     <?php include('includes/header.php'); ?>
   </div>
-  <div class="container">
+  <div class="container mb-3">
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
     <div class="row">
       <div class="col-12">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="home" aria-selected="true">Python</a>
+            <a class="nav-link " id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="home" aria-selected="true">Python</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="java-tab" data-toggle="tab" href="#java" role="tab" aria-controls="profile" aria-selected="false">Java</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
-          </li>
+          
         </ul>
       </div>
 
     </div>
   </div>
-  <div class="container tab-content cus-tab-content" id="myTabContent">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="h2-responsive text-center">Batches Coming Soon.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container tab-content cus-tab-content mt-3" id="myTabContent">
     <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
           probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
           cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro

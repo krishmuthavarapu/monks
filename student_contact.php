@@ -97,8 +97,8 @@
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-6 mb-4   text-center text-md-left  animated fadeIn">
                         <div class="col-12 mt-4 text-center mb-0">
-                            <h2 class="h2-responsive">Powering Your Career Growth</h2>
-                            <p class="text-dark">We Help Skill Seekers in Discovering their True Mentors and Fulfilling their Skill in a Personalised Way</p>
+                            <h2 class="h2-responsive">Powering Your Career Growth.</h2>
+                            <p class="">We Help Skill Seekers in Discovering their True Mentors and Fulfilling their Skill in a Personalised Way</p>
                         </div>
 
                         <div class="row text-center card-caf mt-3">
@@ -146,7 +146,7 @@
                                 <div class="card-body pt-3 pb-3">
 
                                 <img src="img/icons/tution.png" width="50px">
-                                    <p class="mb-0 mt-2">Get Connected with Best Inclass Training Companies</p>
+                                    <p class="mb-0 mt-2">Get Connected with Best-in-Class Training Companies</p>
 
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
 
                                 <img src="img/icons/qua.png" width="50px">
 
-                                    <p class="mb-0 mt-2">App that Gets Keeps You Posted on Industry Trends and Opportunities</p>
+                                    <p class="mb-0 mt-2">App that Keeps You Posted on Industry Trends and Opportunities</p>
 
                                 </div>
                             </div>

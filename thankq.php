@@ -69,6 +69,7 @@ setTimeout(function () {
 
 
     <!-- Navbar -->
+    <?php include('includes/staytuned.php'); ?>
 
     <!-- Full Page Intro -->
     <div class=" full-page-intro bg-img ">

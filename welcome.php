@@ -77,7 +77,7 @@
 
                     <div class="col-lg-6 pt-5 mt-5 pb-5 mb-5 bor-right animated fadeIn">
                         <div>
-                            <h2 class="h2-responsive weight-400">What do you want to <br> <span class="skc">learn today</span></h2>
+                            <h2 class="h2-responsive weight-400">What do you want to <br> <span class="skc">learn today.</span></h2>
                             <form class="form-inline md-form mr-auto mb-4">
                                 <input class="form-control mr-sm-2" type="text" style="border-bottom: 2px solid #01783d;" placeholder="Enter Course Name" aria-label="Search">
                                 <button class="btn skbg btn-rounded  my-0"  onclick="location.href='course_search.php'" type="button">Search</button>
@@ -93,15 +93,15 @@
                             <div class="mb-4   text-center text-md-left">
                                 <div class="row text-center card-sel mt-4">
                                     <div class="col-12">
-                                        <h2 class="h1-responsive text-white weight-400"><span>Why Skill Monks</span></h2>
+                                        <h2 class="h1-responsive text-white weight-400"><span>Why Skill Monks ?</span></h2>
                                     </div>
                                     <!-- Grid column -->
                                     <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                        <img src="img/icons/tution.png" width="50px">
-                                            <p class=" my-3">Get Connected with Best Inclass Training Companies</p>
+                                        <img src="img/icons/tution.png" width="50px" class="mt-1">
+                                            <p class=" my-2">Get Connected with Best-in-Class Training Companies</p>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
@@ -111,8 +111,8 @@
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                        <img src="img/icons/money.png" width="50px">
-                                            <p class=" my-3">Quality Assured with Money Back Guarantee</p>
+                                        <img src="img/icons/money.png" width="50px" class="mt-1">
+                                            <p class=" my-2">Assured  Quality with Money Back Guarantee</p>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
@@ -120,8 +120,8 @@
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                        <img src="img/icons/offer.png" width="50px">
-                                        <p class=" my-3">Best Discount on Fee</p>
+                                        <img src="img/icons/offer.png" width="50px" class="mt-1">
+                                        <p class=" my-2">Best Discount on Fee</p>
                                         </div>
                                     </div>
                                     <!-- Grid column -->
@@ -129,8 +129,8 @@
 
                                         <!--Excerpt-->
                                         <div class="card-body ">
-                                        <img src="img/icons/qua.png" width="50px">
-                                            <p class="p my-3">App that Gets Keeps You Posted on Industry Trends and Opportunities</p>
+                                        <img src="img/icons/qua.png" width="50px" class="mt-1">
+                                            <p class="p my-2">App that Keeps You Posted on Industry Trends and Opportunities</p>
                                         </div>
                                     </div>
 
