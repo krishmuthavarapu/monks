@@ -7,7 +7,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Skill Monks</title>
   <?php include('includes/links.php'); ?>
-
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
   <style type="text/css">
     body {}
@@ -54,9 +54,10 @@
         background: #1C2331 !important;
       }
     }
+
     .cus-tab-content>.active {
-    display: flex;
-}
+      display: flex;
+    }
   </style>
 </head>
 
@@ -89,17 +90,17 @@
           </li>
         </ul>
       </div>
-    
-      </div>
+
     </div>
-    <div class="container tab-content cus-tab-content" id="myTabContent">
-        <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
+  </div>
+  <div class="container tab-content cus-tab-content" id="myTabContent">
+    <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
           probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
           cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
           keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
           placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
           qui.</div> -->
-          <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Raw denim you
+    <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Raw denim you
           probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
           cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
           keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
@@ -113,7 +114,7 @@
       <?php
       if (mysqli_num_rows($query_run) > 0) {
         while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/'.$row['photo'] : 'img/jav.jpg';
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
             <div class="row  card-course h-95 mb-0 pt-0">
@@ -157,7 +158,7 @@
       <?php
       if (mysqli_num_rows($query_run) > 0) {
         while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/'.$row['photo'] : 'img/jav.jpg';
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
             <div class="row  card-course h-95 mb-0 pt-0">
@@ -201,7 +202,7 @@
       <?php
       if (mysqli_num_rows($query_run) > 0) {
         while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/'.$row['photo'] : 'img/jav.jpg';
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
             <div class="row  card-course h-95 mb-0 pt-0">
@@ -253,31 +254,53 @@
           <div class="container register-pop">
             <div class="row">
               <div class="col-md-12 text-center text-white">
-                   <h4>Sign Up</h4>
+                <h4>Sign Up</h4>
                 <br>
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row register-form">
                       <div class="col-md-12" id="">
-                      <?php
-
-if (isset($_POST['submit'])) {
-    $mysqltime = date_create()->format('Y-m-d H:i:s');
-    $sql = "INSERT INTO searched_students(name, number, email, qualification, date)
-VALUES ('" . $_POST["name"] . "','" . $_POST["number"] . "', '" . $_POST["email"] . "', '" . $_POST["qualification"] . "', '" . $mysqltime . "')";
-
-    $result = mysqli_query($connection, $sql);
-    echo "<script>
-    </script>";
-}
-
-?>
-                        <form method="post">
-                          <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" value="" required/>
+                      <script type="text/javascript">
+$(document).ready(function()
+{
+                        	$(document).on('submit', '#reg-form', function()
+	{
+		
+		//var fn = $("#fname").val();
+		//var ln = $("#lname").val();
+	
+		//var data = 'fname='+fn+'&lname='+ln;
+		
+		var data = $(this).serialize();
+		
+		
+		$.ajax({
+		
+		type : 'POST',
+		url  : 'code.php',
+		data : data,
+		success :  function(data)
+				   {						
+						$("#reg-form").fadeOut(500).hide(function()
+						{
+							$(".result").fadeIn(500).show(function()
+							{
+								$(".result").html(data);
+							});
+						});
+						
+				   }
+		});
+		return false;
+	});
+});
+</script>
+                        <form  method="post" id="reg-form">
+                          <div class="form-group" >
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" value="" required />
                           </div>
                           <div class="form-group">
-                            <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required/>
+                            <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required />
                           </div>
                           <div class="form-group">
                             <input type="text" name="email" class="form-control" placeholder="Your Email" value="" required />
@@ -287,7 +310,7 @@ VALUES ('" . $_POST["name"] . "','" . $_POST["number"] . "', '" . $_POST["email"
                           </div>
 
                           <div class="form-group" style="text-align: center">
-                            <input type="submit" onclick="" name="submit" class="btn btn-rounded  skbc" value="Submit" />
+                            <input type="submit" onclick="" name="submit" class="btn btn-rounded  skbc" value="submit" />
                           </div>
                         </form>
                       </div>
