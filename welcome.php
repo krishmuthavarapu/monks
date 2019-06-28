@@ -76,11 +76,12 @@
                 <div class="row wow fadeIn ">
 
                     <div class="col-lg-6 pt-5 mt-5 pb-5 mb-5 bor-right animated fadeIn">
+                        <!-- onclick="location.href='course_search.php'" -->
                         <div>
                             <h2 class="h2-responsive weight-400">What do you want to <br> <span class="skc">learn today.</span></h2>
-                            <form class="form-inline md-form mr-auto mb-4">
-                                <input class="form-control mr-sm-2" type="text" style="border-bottom: 2px solid #01783d;" placeholder="Enter Course Name" aria-label="Search">
-                                <button class="btn skbg btn-rounded  my-0"  onclick="location.href='course_search.php'" type="button">Search</button>
+                            <form class="form-inline md-form mr-auto mb-4" method="post" action="course_search.php">
+                                <input class="form-control mr-sm-2" type="text" name="search" style="border-bottom: 2px solid #01783d;" placeholder="Enter Course Name" aria-label="Search">
+                                <button class="btn skbg btn-rounded  my-0" name="submit" value="submit"  type="submit">Search</button>
                             </form>
                         </div>
                     </div>
