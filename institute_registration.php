@@ -84,6 +84,14 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div>
+                <div class="row">
+                    <div class="col-12 pt-5">
+                        <div class="text-center">
+                            <a href="#regis" style="padding: 0.84rem 1.14rem" class="btn btn-rounded skbc zoom-down"><i class="fas fa-arrow-down fa-3x"></i></a>
+                        
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -92,7 +100,7 @@
 
     </div>
     <!-- institute form -->
-    <div class="container mt-5" class="text-center">
+    <div class="container mt-5" id="regis" class="text-center">
 
         <div class="row">
             <div class="col-md-2"></div>

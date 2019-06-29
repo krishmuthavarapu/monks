@@ -179,7 +179,7 @@
                     <!-- <div class="col-lg-1 col-md-1"></div> -->
                     <div class="col-lg-5 col-md-6 mb-3  animated fadeIn">
                         <!-- Default form login -->
-                        <div class=" text-center pt-3  mt-5" style="    border-radius: 8px;background: #060501b5;">
+                        <div class=" text-center pt-3  mt-5" style="    border-radius: 8px;background: rgba(0, 0, 0, 0.6);">
                             <h2 class=" text-white " style="font-weight:400"> Get Connected Now!</h2>
                             <hr class="hr-cus">
                             <?php

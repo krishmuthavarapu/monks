@@ -57,6 +57,12 @@
     .cus-tab-content>.active {
       display: flex;
     }
+    body{
+      background: #e0e0e0;
+    }
+    a:hover{
+      color: black;
+    }
   </style>
 </head>
 
@@ -77,7 +83,7 @@
     </button> -->
     <div class="row">
       <div class="col-12">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs cus-s-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
           </li>
@@ -113,7 +119,7 @@
           keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
           placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
           qui.</div> -->
-    <div class="row tab-pane fade show active" id="python" role="tabpanel" aria-labelledby="python-tab">
+    <div class="row tab-pane fade show" id="python" role="tabpanel" aria-labelledby="python-tab">
       <?php
       $query = "SELECT * FROM institute_data WHERE course = 'Python'";
       $query_run = mysqli_query($connection, $query);
@@ -134,7 +140,7 @@
                   </a>
                 </div>
               </div>
-              <div class="p-2">
+              <div class="pt-2 pr-2 pl-2">
                 <!-- Category -->
                 <a href="#!" class="">
                   <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
@@ -201,7 +207,7 @@
     }
     ?>
     </div>
-    <div class="row tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+    <div class="row tab-pane fade show  active" id="all" role="tabpanel" aria-labelledby="all-tab">
       <?php
       $query = "SELECT * FROM institute_data ";
       $query_run = mysqli_query($connection, $query);
