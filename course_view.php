@@ -121,7 +121,7 @@
           qui.</div> -->
     <div class="row tab-pane fade show" id="python" role="tabpanel" aria-labelledby="python-tab">
       <?php
-      $query = "SELECT * FROM institute_data WHERE course = 'Python'";
+      $query = "SELECT * FROM institute_data WHERE course LIKE '%Python%'";
       $query_run = mysqli_query($connection, $query);
       ?>
       <?php
@@ -165,7 +165,7 @@
     </div>
     <div class="row tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
       <?php
-      $query = "SELECT * FROM institute_data WHERE course = 'Java'";
+      $query = "SELECT * FROM institute_data WHERE course LIKE '%Java%'";
       $query_run = mysqli_query($connection, $query);
       ?>
       <?php
