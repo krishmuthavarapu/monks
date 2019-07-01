@@ -81,7 +81,7 @@
                 <div class="row pt-3 mt-3 pb-3">
                     <div class="col text-center ">
                         <h2 class="h-rem" style="font-weight:400"><span class="skc">Explore</span> Now!</h2>
-                        <p>Skill Seekers/Skill Development Companies Stay Tuned Something Cool Coming.</p>
+                        <p>Skill Seekers/Skill Development Companies Stay Tuned... Something Cool Coming Soon.</p>
 
                         <!-- <h2 class="h-rem" style="font-weight:400"><span class="p-1">Welcome to</span><span class="p-1" style="color: #01783d;">SkillMonks</span></h2> -->
                         <!-- <h2 class="h2-responsive weight-400"><span class="skbc p-1">Welcome </span><span style="" class="p-1 bg-dark text-white"> to SkillMonks</span></h2> -->
@@ -97,7 +97,7 @@
                     </div>
                     <div class="col text-center align-self-center ">
                         <div class="overlay zoom">
-                            <button type="button" onclick="location.href='institute_selection.php'" class="btn btn-default btn skbg btn-rounded">
+                            <button type="button" onclick="location.href='batch.php'" class="btn btn-default btn skbg btn-rounded">
                                 <div class="h5-responsive">Institute</div>
                             </button>
                         </div>

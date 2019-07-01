@@ -79,11 +79,13 @@
       </div>
         <?php
         $search_value = $_POST["search"];
+        $keys = explode(" ",$search_value);
         if ($connection->connect_error) {
           echo 'Connection Faild: ' . $connection->connect_error;
         } else {
-          $sql = ("SELECT * FROM institute_data WHERE course LIKE '$search_value%'") or die ("Could not search");
-
+          $sql = ("SELECT * FROM institute_data WHERE course LIKE '%$search_value%'") or die ("Could not search");
+        
+        
           $res = $connection->query($sql);
           $count = mysqli_num_rows($res);
           echo "

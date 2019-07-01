@@ -98,7 +98,7 @@
                     <div class="col-lg-6 col-md-6 mb-4   text-center text-md-left  animated fadeIn">
                         <div class="col-12 mt-4 text-center mb-0">
                             <h2 class="h2-responsive">Powering Your Career Growth.</h2>
-                            <p class="">We Help Skill Seekers in Discovering their True Mentors and Fulfilling their Skill in a Personalised Way</p>
+                            <p class="">We help skill seekers in discovering their true mentors and fulfilling their skill needs in a personalised way</p>
                         </div>
 
                         <div class="row text-center card-caf mt-3">

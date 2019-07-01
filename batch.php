@@ -76,8 +76,8 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
         <div class="row fadeIn animated">
           <div class="col-lg-6 col-md-5 mb-4   text-center text-md-left  animated fadeIn">
             <div class="col-12 mt-4 text-center mb-2">
-              <h1 class="">We Partner In Your Growth.</h1>
-              <P>We help you with easier reach to students and working professionals, lead & operation management, and higher conversations.</P>
+              <h1 class="">We Partner in Your Growth.</h1>
+              <P>We help you with easier reach to students and working professionals, leads & operations management, and higher conversions.</P>
             </div>
 
             <div class="row text-center card-caf mt-5">
@@ -151,26 +151,32 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
 
                       <form action="" method="post">
                         <div class="form-group">
-                          <input type="text" name="institute" class="form-control" placeholder="Institute Name" value="" required="" />
+                          <input type="text" name="institute" class="form-control" placeholder="Institute Name" value="" required />
                         </div>
                         <div class="form-group">
-                          <input type="text" name="course" class="form-control" placeholder="course" value="" required="" />
+                          <input type="text" name="course" class="form-control" placeholder="course" value="" required />
                         </div>
                         <div class="form-group">
-                          <input type="text" name="batch_date" class="form-control" placeholder="Batch Date" value="" required="" />
+                          <center>
+                            <div class="text-white" for="">Batch Date</div>
+                          </center>
+                          <input type="date" name="batch_date" class="form-control" placeholder="Batch Date" value="" required />
                         </div>
                         <div class="form-group">
-                          <input type="text" name="demo_date" class="form-control" placeholder="Demo Date" value="" required="" />
+                        <center>
+                            <div class="text-white" for="">Demo Date</div>
+                          </center>
+                          <input type="date" name="demo_date" class="form-control" placeholder="Demo Date" value="" required />
                         </div>
                         <div class="form-group">
-                          <input type="text" name="location" class="form-control" placeholder="location" value="" required="" />
+                          <input type="text" name="location" class="form-control" placeholder="location" value="" required />
                         </div>
 
                         <div class="form-group">
-                          <input type="text" name="email" class="form-control" placeholder="email" value="" required="" />
+                          <input type="text" name="email" class="form-control" placeholder="email" value="" required />
                         </div>
                         <div class="form-group">
-                          <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required="" />
+                          <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required />
                         </div>
 
                         <div class="form-group" style="text-align: center">

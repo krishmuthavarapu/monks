@@ -26,8 +26,8 @@
                         <div class="col-lg-12 col-md-12 mt-4 text-center text-md-left">
 
                             <div class="col-12 mt-4 text-center">
-                                <h1 class="">We Partner In Your Growth.</h1>
-                                <P>We help you with easier reach to students and working professionals, lead & operation management, and higher conversations.</P>
+                                <h1 class="">We Partner in Your Growth.</h1>
+                                <P>We help you with easier reach to students and working professionals, leads & operations management, and higher conversions.</P>
                             </div>
 
                             <div class="row text-center card-caf mt-4 animated fadeIn">
