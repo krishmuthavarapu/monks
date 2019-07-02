@@ -128,6 +128,8 @@ include('includes/header.php'); ?>
                         <th>City</th>
                         <th>Location</th>
                         <th>Website</th>
+                        <th>Appointment date</th>
+                        <th>Appointment time</th>
                         <th>Date</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -147,6 +149,8 @@ include('includes/header.php'); ?>
                                 <td><?php echo $row['city']; ?></td>
                                 <td><?php echo $row['location']; ?></td>
                                 <td><?php echo $row['website']; ?></td>
+                                <td><?php echo $row['adate']; ?></td>
+                                <td><?php echo $row['atime']; ?></td>
                                 
 
                                 <td><?php echo $row['date']; ?></td>

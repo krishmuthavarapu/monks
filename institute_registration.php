@@ -109,8 +109,8 @@
 
                 if (isset($_POST['submit'])) {
                     $mysqltime = date_create()->format('Y-m-d H:i:s');
-                    $sql = "INSERT INTO institute_registration(institute_name, email, number, password, city, location, website, date)
-VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $_POST["password"] . "', '" . $_POST["city"] . "', '" . $_POST["location"] . "', '" . $_POST["website"] . "', '" . $mysqltime . "')";
+                    $sql = "INSERT INTO institute_registration(institute_name, email, number, password, city, location, website, adate, atime, date)
+VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $_POST["password"] . "', '" . $_POST["city"] . "', '" . $_POST["location"] . "', '" . $_POST["website"] . "', '" . $_POST["adate"] . "', '" . $_POST["atime"] . "', '" . $mysqltime . "')";
 
                     $result = mysqli_query($connection, $sql);
                     echo "<script>window.location.href='thankq.php'</script>";
@@ -167,6 +167,18 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Institute's website:</span>
                         </div>
                         <input type="text" name="website" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                    </div>
+                    <div class="md-form input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Appointment Date:</span>
+                        </div>
+                        <input type="date" name="adate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                    </div>
+                    <div class="md-form input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Appointment Time:</span>
+                        </div>
+                        <input type="text" name="atime" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
                     </div>
 
 

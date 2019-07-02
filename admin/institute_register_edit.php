@@ -46,6 +46,7 @@ include('includes/header.php'); ?>
                         <input type="text" class="form-control form-control-user" value="<?php echo $row['website']?>" name="edit_website" placeholder="Website">
                     </div>
                     
+                    
                     <a href="institute_data.php" class="btn btn-danger">Cancel</a>
                     <button class="btn btn-primary" type="submit" name="update_institute_register">Update</button>
                 </form>

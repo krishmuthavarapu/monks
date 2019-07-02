@@ -109,7 +109,7 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                <img src="img/icons/com.png" width="50px">
+                                    <img src="img/icons/com.png" width="50px">
                                     <!-- <h5 class="font-weight-bold my-2">Support</h5> -->
                                     <p class="mb-0 mt-2">Personalised Career Guidance</p>
 
@@ -123,7 +123,7 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                <img src="img/icons/money.png" width="50px">
+                                    <img src="img/icons/money.png" width="50px">
                                     <p class="mb-0 mt-2">Assured Quality with Money Back Guarantee</p>
 
                                 </div>
@@ -134,7 +134,7 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                <img src="img/icons/offer.png" width="50px">
+                                    <img src="img/icons/offer.png" width="50px">
                                     <p class="mb-0 mt-2">Best Discount on Fee</p>
 
                                 </div>
@@ -145,7 +145,7 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                <img src="img/icons/tution.png" width="50px">
+                                    <img src="img/icons/tution.png" width="50px">
                                     <p class="mb-0 mt-2">Get Connected with Best-in-Class Training Companies</p>
 
                                 </div>
@@ -155,7 +155,7 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                <img src="img/icons/qua.png" width="50px">
+                                    <img src="img/icons/qua.png" width="50px">
 
                                     <p class="mb-0 mt-2">App that Keeps You Posted on Industry Trends and Opportunities</p>
 
@@ -166,7 +166,7 @@
                                 <!--Excerpt-->
                                 <div class="card-body pt-3 pb-3">
 
-                                <img src="img/icons/discount.png" width="50px">
+                                    <img src="img/icons/discount.png" width="50px">
 
                                     <p class="mb-0 mt-2">Zero Percent Interest Loan Options</p>
 
