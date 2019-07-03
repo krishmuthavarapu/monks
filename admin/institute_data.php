@@ -29,7 +29,7 @@ include('includes/header.php'); ?>
         $query_run = mysqli_query($connection, $query);
         ?>
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-striped table-bordered" id="example">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -213,6 +213,7 @@ include('includes/header.php'); ?>
     </div>
 </div>
 <!-- End of Page Wrapper -->
+
 <?php include('includes/scripts.php'); ?>
 
 <?php include('includes/footer.php'); ?>
