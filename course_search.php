@@ -75,7 +75,7 @@
     <div class="row">
       
     <div class="col-12">
-        <h2 class="text-center">More Batches Coming Soon</h2>
+        <h2 class="text-center">Upcoming Batches</h2>
       </div>
         <?php
         $search_value = $_POST["search"];
@@ -127,7 +127,7 @@
                 <!-- Post data -->
                 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
                 <!-- Excerpt -->
-                <p class="dark-grey-text small">Nam libero tempore, cum soluta nobis est </p>
+                <p class="dark-grey-text small p-2"> </p>
                 <!-- Read more button -->
               </div>
             </div>
@@ -166,7 +166,8 @@
                             var number = document.getElementById("number").value;
                             var email = document.getElementById("email").value;
                             var qualification = document.getElementById("qualification").value;
-                            if (name && number && email && qualification) {
+                            var course_interested =document.getElementById("course_interested").value;
+                            if (name && number && email && qualification && course_interested) {
                               $.ajax({
                                 type: 'post',
                                 url: 'code_stu.php',
@@ -174,7 +175,8 @@
                                   user_name: name,
                                   user_number: number,
                                   user_email: email,
-                                  user_qualification: qualification
+                                  user_qualification: qualification,
+                                  user_course_interested: course_interested
                                 },
                                 success: function(response) {
                                   $('.modal').removeClass('dis').addClass('fade');
@@ -196,6 +198,9 @@
                           </div>
                           <div class="form-group">
                             <input type="text" id="qualification" class="form-control" placeholder="Qualification" required />
+                          </div>
+                          <div class="form-group">
+                            <input type="text" id="course_interested" class="form-control" placeholder="Course Interested" required />
                           </div>
 
                           <div class="form-group" style="text-align: center">

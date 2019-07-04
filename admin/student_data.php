@@ -31,7 +31,7 @@ include('includes/header.php'); ?>
         $query_run = mysqli_query($connection, $query);
         ?>
         <div class="table-responsive">
-            <table class="table">
+            <table id="example3" class="table table-bordered" style="width:100%">
                 <thead>
                     <tr>
                
@@ -97,7 +97,7 @@ include('includes/header.php'); ?>
         $query_run = mysqli_query($connection, $query);
         ?>
         <div class="table-responsive">
-            <table class="table">
+            <table id="example4" class="table table-bordered" style="width:100%">
                 <thead>
                     <tr>
                
@@ -107,6 +107,7 @@ include('includes/header.php'); ?>
                         <th>Number</th>
                         <th>Email</th>
                         <th>Qualification</th>
+                        <th>Course Interested</th>
                         <th>Date</th>
                         <th>Delete</th>
 
@@ -124,6 +125,7 @@ include('includes/header.php'); ?>
                                 <td><?php echo $row['number']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
                                 <td><?php echo $row['qualification']; ?></td>
+                                <td><?php echo $row['course_interested'] ?></td>
                                 <td><?php echo $row['date']; ?></td>
                                 <td>
                                     <form action="code.php" method="POST">

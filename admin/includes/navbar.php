@@ -23,7 +23,11 @@
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Student Data</span></a>
 </li>
-
+<li class="nav-item active">
+  <a class="nav-link" href="course_tabs.php">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <span>Course tabs</span></a>
+</li>
 <!-- Divider -->
 <hr class="sidebar-divider">
 

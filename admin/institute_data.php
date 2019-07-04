@@ -28,8 +28,9 @@ include('includes/header.php'); ?>
         $query = "SELECT * FROM institute_data";
         $query_run = mysqli_query($connection, $query);
         ?>
+        
         <div class="table-responsive">
-            <table class="table table-striped table-bordered" id="example">
+            <table id="example" class="table table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -97,6 +98,7 @@ include('includes/header.php'); ?>
                 </tbody>
             </table>
         </div>
+        
     </div>
     <div class="row">
         <div class="col-12">
@@ -117,7 +119,7 @@ include('includes/header.php'); ?>
         $query_run = mysqli_query($connection, $query);
         ?>
         <div class="table-responsive">
-            <table class="table">
+            <table id="example2" class="table table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>ID</th>

@@ -242,5 +242,44 @@ if(isset($_POST['update_institute_register']))
      header('Location: institute_data.php');    
      }
     }
+
+
+    // course tabs
+    if(isset($_POST['coursetabbtn']))
+{
+
+    $course = $_POST['course'];
+    $mysqltime = date_create()->format('Y-m-d H:i:s');
+
+
+        $query = "INSERT into course_tab (course,date) VALUES ('$course', '$mysqltime')";
+        $query_run = mysqli_query($connection, $query);
+        if($query_run){
+            // echo"saved";
+            $_SESSION['success'] = "Course added ";
+            header('Location: course_tabs.php');
+        }
+        else{
+            $_SESSION['status'] = "course not created";
+            header('Location: course_tabs.php');
+        }
+
+}
+// delete course tab
+if(isset($_POST['delete_coursetab']))
+{
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM course_tab WHERE id = '$id'";
+    $query_run = mysqli_query($connection,$query);
+    if($query_run){
+        $_SESSION['success']="Course is deleted";
+        header('Location: course_tabs.php');
+    }else{
+     $_SESSION['status']="Course NOT deleted";
+     header('Location: course_tabs.php');    
+     }
+    }
+
+
 ?>
 

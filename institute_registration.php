@@ -172,13 +172,13 @@ VALUES ('" . $_POST["institute_name"] . "','" . $_POST["email"] . "', '" . $_POS
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Appointment Date:</span>
                         </div>
-                        <input type="date" name="adate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="date" name="adate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default">
                     </div>
                     <div class="md-form input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-default">Appointment Time:</span>
                         </div>
-                        <input type="text" name="atime" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default" required>
+                        <input type="text" name="atime" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default">
                     </div>
 
 

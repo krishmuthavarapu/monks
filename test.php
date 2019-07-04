@@ -54,10 +54,52 @@
         background: #1C2331 !important;
       }
     }
+
     .cus-tab-content>.active {
-    display: flex;
-}
+      display: flex;
+    }
   </style>
+  <style type="text/css">
+    body{
+        font-family: Arail, sans-serif;
+    }
+    /* Formatting search box */
+    .search-box{
+        width: 300px;
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+    }
+    .search-box input[type="text"]{
+        height: 32px;
+        padding: 5px 10px;
+        border: 1px solid #CCCCCC;
+        font-size: 14px;
+    }
+    .result{
+        position: absolute;        
+        z-index: 999;
+        top: 100%;
+        left: 0;
+        background: #1C2331;
+    }
+    .search-box input[type="text"], .result{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Formatting result items */
+    .result p{
+        margin: 0;
+        padding: 7px 10px;
+        border: 1px solid #CCCCCC;
+        border-top: none;
+        cursor: pointer;
+        color: white
+    }
+    .result p:hover{
+        background: #f2f2f2;
+    }
+</style>
 </head>
 
 <body>
@@ -72,6 +114,14 @@
     <?php include('includes/header.php'); ?>
   </div>
   <div class="container">
+    <div class="row">
+      <div>
+      <div class="search-box">
+                <input class="form-control mr-sm-2" type="text" autocomplete="off" placeholder="Search country..." />
+                <div class="result"></div>
+      </div>
+    </div>
+    </div>
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
@@ -87,19 +137,35 @@
           <li class="nav-item">
             <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
           </li>
+             
+
+          <li class="nav-item">
+            <!-- <form class="form-inline md-form mr-auto mb-4" method="post" action="course_search.php"> -->
+             
+
+              </div>
+              <button class="btn skbg btn-rounded  my-0" name="submit" value="submit" type="submit">Search</button>
+            <!-- </form> -->
+          </li>
         </ul>
       </div>
-    
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
       </div>
     </div>
-    <div class="container tab-content cus-tab-content" id="myTabContent">
-        <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
+  </div>
+  <div class="container tab-content cus-tab-content" id="myTabContent">
+    <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Raw denim you
           probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
           cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
           keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
           placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
           qui.</div> -->
-          <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Raw denim you
+    <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Raw denim you
           probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
           cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
           keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
@@ -115,7 +181,7 @@
       <?php
       if (mysqli_num_rows($query_run) > 0) {
         while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/'.$row['photo'] : 'img/jav.jpg';
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
             <div class="row  card-course h-95 mb-0 pt-0">
@@ -145,11 +211,11 @@
             </div>
           </div>
         <?php
+        }
+      } else {
+        echo "No record found";
       }
-    } else {
-      echo "No record found";
-    }
-    ?>
+      ?>
     </div>
     <div class="row tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
       <div class="col-12">Java</div>
@@ -160,7 +226,7 @@
       <?php
       if (mysqli_num_rows($query_run) > 0) {
         while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/'.$row['photo'] : 'img/jav.jpg';
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
             <div class="row  card-course h-95 mb-0 pt-0">
@@ -190,11 +256,11 @@
             </div>
           </div>
         <?php
+        }
+      } else {
+        echo "No record found";
       }
-    } else {
-      echo "No record found";
-    }
-    ?>
+      ?>
     </div>
     <div class="row tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
       <div class="col-12">All courses</div>
@@ -205,7 +271,7 @@
       <?php
       if (mysqli_num_rows($query_run) > 0) {
         while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/'.$row['photo'] : 'img/jav.jpg';
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
             <div class="row  card-course h-95 mb-0 pt-0">
@@ -235,11 +301,11 @@
             </div>
           </div>
         <?php
+        }
+      } else {
+        echo "No record found";
       }
-    } else {
-      echo "No record found";
-    }
-    ?>
+      ?>
     </div>
   </div>
 
@@ -303,17 +369,44 @@
     </div>
   </div>
 
-  <script>
-    $(function() {
-      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-    });
-  </script>
+  
+
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <?php include('includes/scripts.php'); ?>
+  <script>
+    $(function() {
+      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+  </script>
+  <!-- search ajax -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.search-box input[type="text"]').on("keyup input", function() {
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if (inputVal.length) {
+          $.get("backend-search.php", {
+            term: inputVal
+          }).done(function(data) {
+            // Display the returned data in browser
+            resultDropdown.html(data);
+          });
+        } else {
+          resultDropdown.empty();
+        }
+      });
 
+      // Set search input value on click of result item
+      $(document).on("click", ".result p", function() {
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+      });
+    });
+  </script>
 </body>
 
 </html>

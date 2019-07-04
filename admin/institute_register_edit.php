@@ -40,7 +40,7 @@ include('includes/header.php'); ?>
                         <input type="text" class="form-control form-control-user" value="<?php echo $row['city']?>" name="edit_city" placeholder="City">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control form-control-user" value="<?php echo $row['location']?>" name="edit_location" placeholder="Location">
+                        <input type="text" class="form-control form-control-user" value="<?php echo $row['location']?>" name="edit_location" placeholder="Location">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" value="<?php echo $row['website']?>" name="edit_website" placeholder="Website">
