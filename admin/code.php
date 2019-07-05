@@ -249,10 +249,11 @@ if(isset($_POST['update_institute_register']))
 {
 
     $course = $_POST['course'];
+    $courseid =$_POST['course_id'];
     $mysqltime = date_create()->format('Y-m-d H:i:s');
 
 
-        $query = "INSERT into course_tab (course,date) VALUES ('$course', '$mysqltime')";
+        $query = "INSERT into course_tab (course_id,course,date) VALUES ('$courseid', '$course', '$mysqltime')";
         $query_run = mysqli_query($connection, $query);
         if($query_run){
             // echo"saved";

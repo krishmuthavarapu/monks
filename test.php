@@ -60,46 +60,53 @@
     }
   </style>
   <style type="text/css">
-    body{
-        font-family: Arail, sans-serif;
+    body {
+      font-family: Arail, sans-serif;
     }
+
     /* Formatting search box */
-    .search-box{
-        width: 300px;
-        position: relative;
-        display: inline-block;
-        font-size: 14px;
+    .search-box {
+      width: 300px;
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
     }
-    .search-box input[type="text"]{
-        height: 32px;
-        padding: 5px 10px;
-        border: 1px solid #CCCCCC;
-        font-size: 14px;
+
+    .search-box input[type="text"] {
+      height: 32px;
+      padding: 5px 10px;
+      border: 1px solid #CCCCCC;
+      font-size: 14px;
     }
-    .result{
-        position: absolute;        
-        z-index: 999;
-        top: 100%;
-        left: 0;
-        background: #1C2331;
+
+    .result {
+      position: absolute;
+      z-index: 999;
+      top: 100%;
+      left: 0;
+      background: #1C2331;
     }
-    .search-box input[type="text"], .result{
-        width: 100%;
-        box-sizing: border-box;
+
+    .search-box input[type="text"],
+    .result {
+      width: 100%;
+      box-sizing: border-box;
     }
+
     /* Formatting result items */
-    .result p{
-        margin: 0;
-        padding: 7px 10px;
-        border: 1px solid #CCCCCC;
-        border-top: none;
-        cursor: pointer;
-        color: white
+    .result p {
+      margin: 0;
+      padding: 7px 10px;
+      border: 1px solid #CCCCCC;
+      border-top: none;
+      cursor: pointer;
+      color: white
     }
-    .result p:hover{
-        background: #f2f2f2;
+
+    .result p:hover {
+      background: #f2f2f2;
     }
-</style>
+  </style>
 </head>
 
 <body>
@@ -114,14 +121,7 @@
     <?php include('includes/header.php'); ?>
   </div>
   <div class="container">
-    <div class="row">
-      <div>
-      <div class="search-box">
-                <input class="form-control mr-sm-2" type="text" autocomplete="off" placeholder="Search country..." />
-                <div class="result"></div>
-      </div>
-    </div>
-    </div>
+
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
@@ -137,14 +137,12 @@
           <li class="nav-item">
             <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
           </li>
-             
+
 
           <li class="nav-item">
             <!-- <form class="form-inline md-form mr-auto mb-4" method="post" action="course_search.php"> -->
-             
 
-              </div>
-              <button class="btn skbg btn-rounded  my-0" name="submit" value="submit" type="submit">Search</button>
+
             <!-- </form> -->
           </li>
         </ul>
@@ -175,47 +173,75 @@
 
       <div class="col-12">Python</div>
       <?php
-      $query = "SELECT * FROM institute_data WHERE course = 'Python'";
-      $query_run = mysqli_query($connection, $query);
-      ?>
-      <?php
-      if (mysqli_num_rows($query_run) > 0) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
-          ?>
-          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
-              <!-- Featured image -->
-              <div class="">
-                <div class=" overlay rounded  mb-2 mt-0">
-                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+      $rec_limit = 28;
+      $sql = "SELECT count(id) FROM institute_data";
+      $retval = mysqli_query($connection, $sql);
+      if (!$retval) {
+        die('Could not get data: ' . mysql_error());
+      }
+      $row = mysqli_fetch_array($retval, MYSQLI_NUM);
+      $rec_count = $row[0];
+      if (isset($_GET{
+        'page'})) {
+        $page = $_GET{
+          'page'} + 1;
+        $offset = $rec_limit * $page;
+      } else {
+        $page = 0;
+        $offset = 0;
+      }
+      $left_rec = $rec_count - ($page * $rec_limit);
+      $sql = "SELECT * " .
+        "FROM institute_data " .
+        "LIMIT $offset, $rec_limit";
+      $retval = mysqli_query($connection, $sql);
+      if (!$retval) {
+        die('Could not get data: ' . mysql_error());
+      }
+      while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+        $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+        echo "
+        <div class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
+            <div class='row  card-course h-95 mb-0 pt-0'>
+              <div class=''>
+                <div class='overlay rounded  mb-2 mt-0'>
+                  <img class='img-fluid' src='$image' alt='Sample image'>
                   <a>
-                    <div class="mask rgba-white-slight"></div>
+                    <div class='mask rgba-white-slight'></div>
                   </a>
                 </div>
               </div>
-              <div class="p-2">
-                <!-- Category -->
-                <a href="#!" class="">
-                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
-                </a>
-                <!-- Post title -->
-                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
-                <!-- Post data -->
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
-                <!-- Excerpt -->
-                <p class="dark-grey-text small">Nam libero tempore, cum soluta nobis est </p>
-                <!-- Read more button -->
-              </div>
-            </div>
-          </div>
-        <?php
-        }
-      } else {
-        echo "No record found";
+              <div class='p-2'>
+                <a href='#!' class=''>
+                  <p class='font-weight-bold mb-1 skc'><i class='fas fa-map pr-2'></i><?php echo $row[course]; ?></p>
+      </a>
+      <h5 class='mb-1'><strong><?php echo $row[institute]; ?></strong></h5>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Location: </a><?php echo $row[location]; ?></p>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Batch Date: </a><?php echo $row[batch_date]; ?></p>
+      <p class='dark-grey-text small'>Nam libero tempore, cum soluta nobis est </p>
+      <!-- Read more button -->
+    </div>
+  </div>
+  </div>
+
+  ";
       }
+      echo " <div class='col-12'>
+    <div class='text-center'> ";
+      if ($page > 0) {
+        $last = $page - 2;
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Previous</button></a> ";
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($page == 0) {
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($left_rec < $rec_limit) {
+        $last = $page - 2;
+        echo "<a href = \"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Last</button></a>";
+      }
+
+      echo "<div></div> "
       ?>
+
     </div>
     <div class="row tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
       <div class="col-12">Java</div>
@@ -369,7 +395,7 @@
     </div>
   </div>
 
-  
+
 
   <!--/.Footer-->
 

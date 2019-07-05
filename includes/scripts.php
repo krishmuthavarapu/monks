@@ -7,7 +7,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Initializations -->
+    
     <script type="text/javascript">
+
         // Animations initialization
         // new WOW().init();
     </script>

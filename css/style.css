@@ -1,12 +1,13 @@
 Required height of parents of the Half Page Carousel for proper displaying carousel itself
-
 /* html,
 body,
 .view {
   height: 100%; } */
-  html {
-    scroll-behavior: smooth;
-  }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   /* font-family: 'Lato', sans-serif; */
@@ -17,6 +18,7 @@ body {
     font-size: 12px;
   }
 }
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -25,6 +27,7 @@ a {
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
+
 .mask {
   background-color: rgba(0, 0, 0, 0.123);
 }
@@ -41,7 +44,8 @@ a {
   background-color: #01783d!important;
   color: #fff;
 }
-.skbg{
+
+.skbg {
   background: linear-gradient(to right, rgb(1, 120, 61) 0%, rgba(0, 0, 0, 0.8) 100%);
   color: white
 }
@@ -270,7 +274,7 @@ a {
   margin: 10px;
   /* transition: initial; */
   width: 100%;
-  height: 160px;  
+  height: 160px;
   background: rgba(1, 120, 61, 0.62);
   color: #fff;
   /* border-radius: 8px; */
@@ -283,7 +287,8 @@ a {
 } */
 
 /* institute form */
-.h-card{
+
+.h-card {
   height: 130px !important;
 }
 
@@ -327,18 +332,19 @@ form#frm {
 /* course View */
 
 .card-head .card-course {
-    /* padding: 3px; */
-    margin: 5px;
-    /* border-radius: 8px; */
-    background: whitesmoke;
-    box-shadow: 0px 0px 2px 0px #B7B795;
+  /* padding: 3px; */
+  margin: 5px;
+  /* border-radius: 8px; */
+  background: whitesmoke;
+  box-shadow: 0px 0px 2px 0px #B7B795;
 }
 
 .card-head:hover .card-course {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  box-shadow: 0px 0px 2px 2px #b7b7b7;}
+  box-shadow: 0px 0px 2px 2px #b7b7b7;
+}
 
 .card-head .card-course {
   -webkit-transition: all .2s linear;
@@ -365,29 +371,34 @@ form#frm {
 .register-pop {
   /* background: #000000a1;    */
   background-color: rgba(0, 0, 0, 0.6);
-   padding: 2em;
+  padding: 2em;
 }
 
 /* #profile-tab {
   font-size: 25px;
   color: white;
 } */
-.dis{
-   display:block;
-   background: rgba(191, 191, 191, 0.6);
+
+.dis {
+  display: block;
+  background: rgba(191, 191, 191, 0.6);
 }
 
-@media (min-width: 576px){
-.cus-modal-dialog {
+@media (min-width: 576px) {
+  .cus-modal-dialog {
     max-width: 410px;
     margin: 1.75rem auto;
-}}
+  }
+}
+
 /* institute registration */
-.zoom-down:hover{
+
+.zoom-down:hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
+
 .zoom-down {
   -webkit-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -395,6 +406,7 @@ form#frm {
 }
 
 /* course view */
+
 .cus-s-tabs {
   border-bottom: 1px solid #01783d;
   border-radius: 22px;
@@ -403,8 +415,14 @@ form#frm {
   /* background: #01783d9e; */
   background: linear-gradient(to right, rgb(1, 120, 61) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
-.cus-s-tabs .nav-link{
+
+.cus-s-tabs .nav-link {
   color: white;
   border-radius: 25px;
+}
 
+@media (max-width: 600px) {
+  .card-head .card-course {
+    margin: 0px 60px 0px 60px;
+  }
 }

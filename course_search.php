@@ -73,70 +73,80 @@
   </div>
   <div class="container">
     <div class="row">
-      
-    <div class="col-12">
+
+      <div class="col-12">
         <h2 class="text-center">Upcoming Batches</h2>
       </div>
-        <?php
-        $search_value = $_POST["search"];
-        $keys = explode(" ",$search_value);
-        if ($connection->connect_error) {
-          echo 'Connection Faild: ' . $connection->connect_error;
-        } else {
-          $sql = ("SELECT * FROM institute_data WHERE course LIKE '%$search_value%'") or die ("Could not search");
-        
-        
-          $res = $connection->query($sql);
-          $count = mysqli_num_rows($res);
-          echo "
-          <div class='col-12'>
-          <p>Search Results For: $search_value</p>
-          </div>
-          ";
-          if($count == 0){ ?>
-                  <h2 class="text-center p-5 m-5">Stay Tune We are Launching Soon</h2>
+      <?php
+      $search_value = $_POST["search"];
+      $keys = explode(" ", $search_value);
+      if ($connection->connect_error) {
+        echo 'Connection Faild: ' . $connection->connect_error;
+      } else {
+        $sql = ("SELECT * FROM institute_data WHERE course LIKE '%$search_value%'") or die("Could not search");
 
-          <?php
-         
-      
-          }else{
-          while ($row = $res->fetch_assoc()) { 
+
+        $res = $connection->query($sql);
+        $count = mysqli_num_rows($res);
+        echo "
+            <div class='col-12'>
+             <ul class='nav nav-tabs cus-s-tabs custom-search-tabs mb-2' id='myTab' role='tablist'>
+             <li class='nav-item'>
+              <a class='nav-link active' href='#!'> Search Results For: $search_value</a>
+             </li>
+             <li>
+              <a class='nav-link' href='course_view.php'>View all courses</a>
+             </li>
+             </ul>
+           </div>
+          ";
+        if ($count == 0) { ?>
+          <div class="col-12">
+            <h2 class="text-center p-5 m-5">Stay Tuned We are Launching Soon</h2>
+
+          </div>
+
+        <?php
+
+
+        } else {
+          while ($row = $res->fetch_assoc()) {
             $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
 
             ?>
-            
+
             <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
-              <!-- Featured image -->
-              <div class="">
-                <div class=" overlay rounded  mb-2 mt-0">
-                  <img class="img-fluid w-100" width="100%" src="<?php echo $image ?>" alt="Sample image">
-                  <a>
-                    <div class="mask rgba-white-slight"></div>
+              <div class="row  card-course h-95 mb-0 pt-0">
+                <!-- Featured image -->
+                <div class="">
+                  <div class=" overlay rounded  mb-2 mt-0">
+                    <img class="img-fluid w-100" width="100%" src="<?php echo $image ?>" alt="Sample image">
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="p-2">
+                  <!-- Category -->
+                  <a href="#!" class="">
+                    <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
                   </a>
+                  <!-- Post title -->
+                  <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                  <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                  <!-- Post data -->
+                  <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                  <!-- Excerpt -->
+                  <p class="dark-grey-text small p-2"> </p>
+                  <!-- Read more button -->
                 </div>
               </div>
-              <div class="p-2">
-                <!-- Category -->
-                <a href="#!" class="">
-                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
-                </a>
-                <!-- Post title -->
-                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
-                <!-- Post data -->
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
-                <!-- Excerpt -->
-                <p class="dark-grey-text small p-2"> </p>
-                <!-- Read more button -->
-              </div>
             </div>
-          </div>
-         <?php }
+          <?php }
         }
       }
-        ?>
-      </div>
+      ?>
+    </div>
   </div>
 
 
@@ -146,7 +156,7 @@
   <?php include('includes/footer.php'); ?>
   <!-- modal -->
   <!-- Modal -->
-  <!-- add class dis -->
+  <!-- add class dis to show popup-->
   <div class="modal dis" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog cus-modal-dialog" role="document">
       <div class="modal-content bgin">
@@ -166,7 +176,7 @@
                             var number = document.getElementById("number").value;
                             var email = document.getElementById("email").value;
                             var qualification = document.getElementById("qualification").value;
-                            var course_interested =document.getElementById("course_interested").value;
+                            var course_interested = document.getElementById("course_interested").value;
                             if (name && number && email && qualification && course_interested) {
                               $.ajax({
                                 type: 'post',

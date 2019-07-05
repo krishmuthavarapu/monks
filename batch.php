@@ -173,7 +173,7 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                         </div>
 
                         <div class="form-group">
-                          <input type="text" name="email" class="form-control" placeholder="email" value="" required />
+                          <input type="email" name="email" class="form-control" placeholder="email" value="" required />
                         </div>
                         <div class="form-group">
                           <input type="text" name="number" class="form-control" placeholder="Mobile Number" value="" required />

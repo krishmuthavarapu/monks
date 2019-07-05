@@ -29,7 +29,10 @@ include('includes/header.php'); ?>
                 <form class="user" method="POST" action="code.php">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" class="form-control " name="course" placeholder="Add Course">
+                            <input type="text" class="form-control " name="course" placeholder="Add Course name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control " name="course_id" pattern="^\S+$" placeholder="course_id" required>
                         </div>
                         <button type="submit" name="coursetabbtn" class="btn btn-primary">Add course</button>
 
@@ -54,6 +57,7 @@ include('includes/header.php'); ?>
 
 
                         <th>ID</th>
+                        <th>Course id</th>
                         <th>Course Tab Name</th>
                         <th>Date</th>
                         <th>Delete</th>
@@ -68,6 +72,7 @@ include('includes/header.php'); ?>
                             <tr>
 
                                 <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['course_id']; ?></td>
                                 <td><?php echo $row['course']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
  

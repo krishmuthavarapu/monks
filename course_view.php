@@ -89,10 +89,6 @@
           <li class="nav-item">
             <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
           </li>
-         
-          <li class="nav-item">
-            <a class="nav-link" id="java-tab" data-toggle="tab" href="#java" role="tab" aria-controls="profile" aria-selected="false">Java</a>
-          </li>
           <?php
           $query = "SELECT * FROM course_tab";
           $query_run = mysqli_query($connection, $query);
@@ -102,7 +98,7 @@
             while ($row = mysqli_fetch_assoc($query_run)) {
               ?>
               <li class="nav-item">
-                <a class="nav-link" id="<?php echo $row['course']; ?>-tab" data-toggle="tab" href="#<?php echo $row['course']; ?>" role="tab" aria-controls="<?php echo $row['course']; ?>" aria-selected="false"><?php echo $row['course']; ?></a>
+                <a class="nav-link" id="<?php echo $row['course_id']; ?>-tab" data-toggle="tab" href="#<?php echo $row['course_id']; ?>" role="tab" aria-controls="<?php echo $row['course']; ?>" aria-selected="false"><?php echo $row['course']; ?></a>
               </li>
             <?php
             }
@@ -124,159 +120,142 @@
     </div>
   </div>
   <div class="container tab-content cus-tab-content mt-3" id="myTabContent">
-
-    
-    <div class="row tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
-      <?php
-      $query = "SELECT * FROM institute_data WHERE course LIKE '%Java%'";
-      $query_run = mysqli_query($connection, $query);
-      ?>
-      <?php
-      if (mysqli_num_rows($query_run) > 0) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
-          ?>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
-              <!-- Featured image -->
-              <div class="">
-                <div class=" overlay rounded  mb-2 mt-0">
-                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
-                  <a>
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
-                </div>
-              </div>
-              <div class="p-2">
-                <!-- Category -->
-                <a href="#!" class="">
-                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
-                </a>
-                <!-- Post title -->
-                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
-                <!-- Post data -->
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
-                <!-- Excerpt -->
-                <p class="dark-grey-text small p-2"> </p>
-                <!-- Read more button -->
-              </div>
-            </div>
-          </div>
-        <?php
-        }
-      } else {
-        echo "No record found";
-      }
-      ?>
-    </div>
     <div class="row tab-pane fade show  active" id="all" role="tabpanel" aria-labelledby="all-tab">
-      <?php
-      $query = "SELECT * FROM institute_data ";
-      $query_run = mysqli_query($connection, $query);
-      ?>
-      <?php
-      if (mysqli_num_rows($query_run) > 0) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
-          ?>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
-              <!-- Featured image -->
-              <div class="">
-                <div class=" overlay rounded  mb-2 mt-0">
-                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+    <?php
+      $rec_limit = 28;
+      $sql = "SELECT count(id) FROM institute_data";
+      $retval = mysqli_query($connection, $sql);
+      if (!$retval) {
+        die('Could not get data: ' . mysql_error());
+      }
+      $row = mysqli_fetch_array($retval, MYSQLI_NUM);
+      $rec_count = $row[0];
+      if (isset($_GET{
+        'page'})) {
+        $page = $_GET{
+          'page'} + 1;
+        $offset = $rec_limit * $page;
+      } else {
+        $page = 0;
+        $offset = 0;
+      }
+      $left_rec = $rec_count - ($page * $rec_limit);
+      $sql = "SELECT * " .
+        "FROM institute_data " .
+        "LIMIT $offset, $rec_limit";
+      $retval = mysqli_query($connection, $sql);
+      if (!$retval) {
+        die('Could not get data: ' . mysql_error());
+      }
+      while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+        $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+        echo "
+        <div class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
+            <div class='row  card-course h-95 mb-0 pt-0'>
+              <div class=''>
+                <div class='overlay rounded  mb-2 mt-0'>
+                  <img class='img-fluid' src='$image' alt='Sample image'>
                   <a>
-                    <div class="mask rgba-white-slight"></div>
+                    <div class='mask rgba-white-slight'></div>
                   </a>
                 </div>
               </div>
-              <div class="p-2">
-                <!-- Category -->
-                <a href="#!" class="">
-                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
-                </a>
-                <!-- Post title -->
-                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
-                <!-- Post data -->
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
-                <!-- Excerpt -->
-                <p class="dark-grey-text small p-2"></p>
-                <!-- Read more button -->
-              </div>
-            </div>
-          </div>
-        <?php
-        }
-      } else {
-        echo "No record found";
+              <div class='p-2'>
+                <a href='#!' class=''>
+                  <p class='font-weight-bold mb-1 skc'><i class='fas fa-map pr-2'></i><?php echo $row[course]; ?></p>
+      </a>
+      <h5 class='mb-1'><strong><?php echo $row[institute]; ?></strong></h5>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Location: </a><?php echo $row[location]; ?></p>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Batch Date: </a><?php echo $row[batch_date]; ?></p>
+      <p class='dark-grey-text small'>Nam libero tempore, cum soluta nobis est </p>
+      <!-- Read more button -->
+    </div>
+  </div>
+  </div>
+
+  ";
       }
+      echo " <div class='col-12'>
+    <div class='text-center'> ";
+      if ($page > 0) {
+        $last = $page - 2;
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Previous</button></a> ";
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($page == 0) {
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($left_rec < $rec_limit) {
+        $last = $page - 2;
+        echo "<a href = \"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Last</button></a>";
+      }
+
+      echo "</div></div> "
       ?>
     </div>
     <?php
-          $query = "SELECT * FROM course_tab";
-          $query_run = mysqli_query($connection, $query);
-          ?>
+    $query = "SELECT * FROM course_tab";
+    $query_run = mysqli_query($connection, $query);
+    ?>
     <?php
-          if (mysqli_num_rows($query_run) > 0) {
-            while ($row = mysqli_fetch_assoc($query_run)) {
+    if (mysqli_num_rows($query_run) > 0) {
+      while ($row = mysqli_fetch_assoc($query_run)) {
+        ?>
+        <div class="row tab-pane fade show" id="<?php echo $row['course_id']; ?>" role="tabpanel" aria-labelledby="<?php echo $row['course_id']; ?>-tab">
+
+
+          <?php
+          $selected = $row['course'];
+
+          $querys = "SELECT * FROM institute_data WHERE course LIKE '%$selected%'";
+          $querys_run = mysqli_query($connection, $querys);
+          ?>
+          <?php
+          if (mysqli_num_rows($querys_run) > 0) {
+            while ($row = mysqli_fetch_assoc($querys_run)) {
+              $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
               ?>
-    <div class="row tab-pane fade show" id="<?php echo $row['course']; ?>" role="tabpanel" aria-labelledby="<?php echo $row['course']; ?>-tab">
-    
-     
-     <?php
-     
-      $query = "SELECT * FROM institute_data WHERE course LIKE '%mean%'";
-      $query_run = mysqli_query($connection, $query);
-      ?>
-      <?php
-      if (mysqli_num_rows($query_run) > 0) {
-        while ($row = mysqli_fetch_assoc($query_run)) {
-          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
-          ?>
-          <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
-              <!-- Featured image -->
-              <div class="">
-                <div class=" overlay rounded  mb-2 mt-0">
-                  <img class="img-fluid w-100" width="100%" src="<?php echo $image ?>" alt="Sample image">
-                  <a>
-                    <div class="mask rgba-white-slight"></div>
-                  </a>
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
+                <div class="row  card-course h-95 mb-0 pt-0">
+                  <!-- Featured image -->
+                  <div class="">
+                    <div class=" overlay rounded  mb-2 mt-0">
+                      <img class="img-fluid w-100" width="100%" src="<?php echo $image ?>" alt="Sample image">
+                      <a>
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="pt-2 pr-2 pl-2">
+                    <!-- Category -->
+                    <a href="#!" class="">
+                      <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
+                    </a>
+                    <!-- Post title -->
+                    <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                    <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                    <!-- Post data -->
+                    <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                    <!-- Excerpt -->
+                    <p class="dark-grey-text small p-2"> </p>
+                    <!-- Read more button -->
+                  </div>
                 </div>
               </div>
-              <div class="pt-2 pr-2 pl-2">
-                <!-- Category -->
-                <a href="#!" class="">
-                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
-                </a>
-                <!-- Post title -->
-                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
-                <!-- Post data -->
-                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
-                <!-- Excerpt -->
-                <p class="dark-grey-text small p-2"> </p>
-                <!-- Read more button -->
-              </div>
-            </div>
-          </div>
-        <?php
-        }
-      } else {
-        echo "No record found";
-      }
-      ?>
-    </div>
-    <?php
+            <?php
             }
           } else {
             echo "No record found";
           }
           ?>
+        </div>
+      <?php
+      }
+    } else {
+      echo "No record found";
+    }
+    ?>
+    
   </div>
-  
+
 
 
   <!-- Full Page Intro -->
