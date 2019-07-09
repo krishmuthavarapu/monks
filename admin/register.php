@@ -75,7 +75,7 @@ include('includes/header.php'); ?>
                         <th>ID</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Password</th>
+                        <!-- <th>Password</th> -->
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -89,7 +89,6 @@ include('includes/header.php'); ?>
                                 <td><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['username']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td><?php echo $row['password']; ?></td>
                                 
                                 <td><form action="register_edit.php" method="post">
                                     <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">

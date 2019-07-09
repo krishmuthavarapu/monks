@@ -121,7 +121,7 @@
   </div>
   <div class="container tab-content cus-tab-content mt-3" id="myTabContent">
     <div class="row tab-pane fade show  active" id="all" role="tabpanel" aria-labelledby="all-tab">
-    <?php
+      <?php
       $rec_limit = 28;
       $sql = "SELECT count(id) FROM institute_data";
       $retval = mysqli_query($connection, $sql);
@@ -149,6 +149,10 @@
       }
       while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
         $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+        $course = $row['course'];
+        $institute = $row['institute'];
+        $location = $row['location'];
+        $batch_date = $row['batch_date'];
         echo "
         <div class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
             <div class='row  card-course h-95 mb-0 pt-0'>
@@ -162,12 +166,12 @@
               </div>
               <div class='p-2'>
                 <a href='#!' class=''>
-                  <p class='font-weight-bold mb-1 skc'><i class='fas fa-map pr-2'></i><?php echo $row[course]; ?></p>
+                  <p class='font-weight-bold mb-1 skc'><i class='fas fa-map pr-2'></i>$course</p>
       </a>
-      <h5 class='mb-1'><strong><?php echo $row[institute]; ?></strong></h5>
-      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Location: </a><?php echo $row[location]; ?></p>
-      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Batch Date: </a><?php echo $row[batch_date]; ?></p>
-      <p class='dark-grey-text small'>Nam libero tempore, cum soluta nobis est </p>
+      <h5 class='mb-1'><strong>$institute</strong></h5>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Location: </a>$location</p>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Batch Date: </a>$batch_date</p>
+      <p class='dark-grey-text small p-2'> </p>
       <!-- Read more button -->
     </div>
   </div>
@@ -200,8 +204,6 @@
       while ($row = mysqli_fetch_assoc($query_run)) {
         ?>
         <div class="row tab-pane fade show" id="<?php echo $row['course_id']; ?>" role="tabpanel" aria-labelledby="<?php echo $row['course_id']; ?>-tab">
-
-
           <?php
           $selected = $row['course'];
 
@@ -253,7 +255,7 @@
       echo "No record found";
     }
     ?>
-    
+
   </div>
 
 

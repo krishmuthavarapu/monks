@@ -31,7 +31,7 @@ include('includes/header.php'); ?>
                         <input type="email" class="form-control form-control-user" value="<?php echo $row['email']?>" name="edit_email" placeholder="Email Address">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control form-control-user" value="<?php echo $row['password'] ?>" name="edit_password" placeholder="Password">
+                        <input type="password" class="form-control form-control-user" value="" name="edit_password" placeholder="Password">
 
                     </div>
                     <a href="register.php" class="btn btn-danger">Cancel</a>
