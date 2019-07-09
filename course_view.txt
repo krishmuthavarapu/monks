@@ -1,3 +1,8 @@
+
+$sql = ("SELECT * FROM institute_data WHERE (course LIKE '%$search_value%') AND (batch_date >= CURDATE()) ORDER BY batch_date DESC") or die("Could not search");
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

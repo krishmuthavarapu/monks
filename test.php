@@ -121,12 +121,42 @@
     <?php include('includes/header.php'); ?>
   </div>
   <div class="container">
-
+  <script>
+$(document).ready(function(){
+ load_data();
+ function load_data(query)
+ {
+  $.ajax({
+   url:"tab_search.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#result').html(data);
+   }
+  });
+ }
+ $('#search').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
+</script>
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
     <div class="row">
       <div class="col-12">
+      <input type="text" name="search" id="search" placeholder="Search" class="form-control" />
+      
+
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="home" aria-selected="true">Python</a>
@@ -199,30 +229,10 @@
         die('Could not get data: ' . mysql_error());
       }
       while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-        $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
         echo "
-        <div class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
-            <div class='row  card-course h-95 mb-0 pt-0'>
-              <div class=''>
-                <div class='overlay rounded  mb-2 mt-0'>
-                  <img class='img-fluid' src='$image' alt='Sample image'>
-                  <a>
-                    <div class='mask rgba-white-slight'></div>
-                  </a>
-                </div>
-              </div>
-              <div class='p-2'>
-                <a href='#!' class=''>
-                  <p class='font-weight-bold mb-1 skc'><i class='fas fa-map pr-2'></i><?php echo $row[course]; ?></p>
-      </a>
-      <h5 class='mb-1'><strong><?php echo $row[institute]; ?></strong></h5>
-      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Location: </a><?php echo $row[location]; ?></p>
-      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Batch Date: </a><?php echo $row[batch_date]; ?></p>
-      <p class='dark-grey-text small'>Nam libero tempore, cum soluta nobis est </p>
-      <!-- Read more button -->
-    </div>
-  </div>
-  </div>
+        <div id='result' class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
+
+       </div>
 
   ";
       }

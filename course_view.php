@@ -106,6 +106,18 @@
             echo "No record found";
           }
           ?>
+          <li class="nav-item">
+            <a class="nav-link" id="multi-tab" data-toggle="tab" href="#multi" role="tab" aria-controls="multi" aria-selected="false">Multimedia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sap-tab" data-toggle="tab" href="#sap" role="tab" aria-controls="sap" aria-selected="false">SAP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="cyber-tab" data-toggle="tab" href="#cyber" role="tab" aria-controls="cyber" aria-selected="false">Cyber Security</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="web-tab" data-toggle="tab" href="#web" role="tab" aria-controls="web" aria-selected="false">Web Designing</a>
+          </li>
 
         </ul>
       </div>
@@ -141,8 +153,8 @@
       }
       $left_rec = $rec_count - ($page * $rec_limit);
       $sql = "SELECT * " .
-        "FROM institute_data " .
-        "LIMIT $offset, $rec_limit";
+        "FROM institute_data ORDER BY batch_date DESC " .
+        "LIMIT $offset, $rec_limit ";
       $retval = mysqli_query($connection, $sql);
       if (!$retval) {
         die('Could not get data: ' . mysql_error());
@@ -205,9 +217,17 @@
         ?>
         <div class="row tab-pane fade show" id="<?php echo $row['course_id']; ?>" role="tabpanel" aria-labelledby="<?php echo $row['course_id']; ?>-tab">
           <?php
-          $selected = $row['course'];
+          $selected = $row['key_words'];
+          $search_exploded = explode(" ", $selected);
+          $x = 0;
+          $construct = "";
+          foreach ($search_exploded as $search_each) {
+            $x++;
+            if ($x == 1) $construct .= "course LIKE '%$search_each%'";
+            else $construct .= "OR institute LIKE '%$search_each%'";
+          }
 
-          $querys = "SELECT * FROM institute_data WHERE course LIKE '%$selected%'";
+          $querys = "SELECT * FROM institute_data WHERE $construct ORDER BY batch_date DESC ";
           $querys_run = mysqli_query($connection, $querys);
           ?>
           <?php
@@ -255,7 +275,186 @@
       echo "No record found";
     }
     ?>
-
+    <div class="row tab-pane fade" id="multi" role="tabpanel" aria-labelledby="multi-tab">
+      <?php
+      $selected = 'multimedia';
+      $query = "SELECT * FROM institute_data WHERE (course LIKE '%$selected%') OR (institute LIKE '%$selected%')";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0 pt-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-0">
+                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
+                </a>
+                <!-- Post title -->
+                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text small p-2"></p>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+      } else {
+        echo "No record found";
+      }
+      ?>
+    </div>
+    <div class="row tab-pane fade" id="sap" role="tabpanel" aria-labelledby="sap-tab">
+      <?php
+      $selected = 'sap';
+      $query = "SELECT * FROM institute_data WHERE (course LIKE '%$selected%') OR (institute LIKE '%$selected%')";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0 pt-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-0">
+                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
+                </a>
+                <!-- Post title -->
+                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text small p-2"> </p>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+      } else {
+        echo "No record found";
+      }
+      ?>
+    </div>
+    <div class="row tab-pane fade" id="cyber" role="tabpanel" aria-labelledby="cyber-tab">
+      <?php
+      $selected = 'Hacking';
+      $query = "SELECT * FROM institute_data WHERE (course LIKE '%$selected%') OR (institute LIKE '%$selected%')";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0 pt-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-0">
+                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
+                </a>
+                <!-- Post title -->
+                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text small p-2"> </p>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+      } else {
+        echo "No record found";
+      }
+      ?>
+    </div>
+    <div class="row tab-pane fade" id="web" role="tabpanel" aria-labelledby="web-tab">
+      <?php
+      $selected = 'web';
+      $query = "SELECT * FROM institute_data WHERE (course LIKE '%$selected%') OR (institute LIKE '%$selected%')";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0 pt-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-0">
+                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
+                </a>
+                <!-- Post title -->
+                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text small p-2"> </p>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+      } else {
+        echo "No record found";
+      }
+      ?>
+    </div>
   </div>
 
 
