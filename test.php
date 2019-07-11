@@ -203,53 +203,46 @@ $(document).ready(function(){
 
       <div class="col-12">Python</div>
       <?php
-      $rec_limit = 28;
-      $sql = "SELECT count(id) FROM institute_data";
-      $retval = mysqli_query($connection, $sql);
-      if (!$retval) {
-        die('Could not get data: ' . mysql_error());
-      }
-      $row = mysqli_fetch_array($retval, MYSQLI_NUM);
-      $rec_count = $row[0];
-      if (isset($_GET{
-        'page'})) {
-        $page = $_GET{
-          'page'} + 1;
-        $offset = $rec_limit * $page;
+      $query = "SELECT * FROM institute_data WHERE course = 'python'";
+      $query_run = mysqli_query($connection, $query);
+      ?>
+      <?php
+      if (mysqli_num_rows($query_run) > 0) {
+        while ($row = mysqli_fetch_assoc($query_run)) {
+          $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+          ?>
+          <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+            <div class="row  card-course h-95 mb-0 pt-0">
+              <!-- Featured image -->
+              <div class="">
+                <div class=" overlay rounded  mb-2 mt-0">
+                  <img class="img-fluid" src="<?php echo $image ?>" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="p-2 w-100">
+                <!-- Category -->
+                <a href="#!" class="">
+                  <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
+                </a>
+                <!-- Post title -->
+                <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
+                <!-- Post data -->
+                <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
+                <!-- Excerpt -->
+                <div class="" style="float:right"><p class="dark-grey-text small"><a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank"><i class="fab  fa-whatsapp skc pr-1" style="font-size:18px" ></i></a><a href='tel:9578800900' class="skc"> 9578 800 900</a> </p></div>
+                <!-- Read more button -->
+              </div>
+            </div>
+          </div>
+        <?php
+        }
       } else {
-        $page = 0;
-        $offset = 0;
+        echo "No record found";
       }
-      $left_rec = $rec_count - ($page * $rec_limit);
-      $sql = "SELECT * " .
-        "FROM institute_data " .
-        "LIMIT $offset, $rec_limit";
-      $retval = mysqli_query($connection, $sql);
-      if (!$retval) {
-        die('Could not get data: ' . mysql_error());
-      }
-      while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-        echo "
-        <div id='result' class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
-
-       </div>
-
-  ";
-      }
-      echo " <div class='col-12'>
-    <div class='text-center'> ";
-      if ($page > 0) {
-        $last = $page - 2;
-        echo "<a href=\"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Previous</button></a> ";
-        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
-      } else if ($page == 0) {
-        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
-      } else if ($left_rec < $rec_limit) {
-        $last = $page - 2;
-        echo "<a href = \"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Last</button></a>";
-      }
-
-      echo "<div></div> "
       ?>
 
     </div>
@@ -298,7 +291,7 @@ $(document).ready(function(){
       }
       ?>
     </div>
-    <div class="row tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+    <div class="row tab-pane fade active" id="all" role="tabpanel" aria-labelledby="all-tab">
       <div class="col-12">All courses</div>
       <?php
       $query = "SELECT * FROM institute_data ";

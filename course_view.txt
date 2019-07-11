@@ -351,3 +351,77 @@ $sql = ("SELECT * FROM institute_data WHERE (course LIKE '%$search_value%') AND 
 </body>
 
 </html>
+
+<-- page nation -->
+   $rec_limit = 4;
+      $sql = "SELECT count(id) FROM institute_data";
+      $retval = mysqli_query($connection, $sql);
+      if (!$retval) {
+        die('Could not get data: ' . mysql_error());
+      }
+      $row = mysqli_fetch_array($retval, MYSQLI_NUM);
+      $rec_count = $row[0];
+      if (isset($_GET{
+        'page'})) {
+        $page = $_GET{
+          'page'} + 1;
+        $offset = $rec_limit * $page;
+      } else {
+        $page = 0;
+        $offset = 0;
+      }
+      $left_rec = $rec_count - ($page * $rec_limit);
+      $sql = "SELECT * " .
+        "FROM institute_data ORDER BY batch_date DESC " .
+        "LIMIT $offset, $rec_limit ";
+      $retval = mysqli_query($connection, $sql);
+      if (!$retval) {
+        die('Could not get data: ' . mysql_error());
+      }
+      while ($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+        $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
+        $course = $row['course'];
+        $institute = $row['institute'];
+        $location = $row['location'];
+        $batch_date = $row['batch_date'];
+        echo "
+        <div class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
+
+        <div class='row  card-course h-95 mb-0 pt-0'>
+          <div class=''>
+            <div class='overlay rounded  mb-2 mt-0'>
+              <img class='img-fluid' src='$image' alt='Sample image'>
+              <a>
+                <div class='mask rgba-white-slight'></div>
+              </a>
+            </div>
+          </div>
+          <div class='p-2'>
+            <a href='#!' class=''>
+              <p class='font-weight-bold mb-1 skc'><i class='fas fa-map pr-2'></i>$course</p>
+      </a>
+      <h5 class='mb-1'><strong>$institute</strong></h5>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Location: </a>$location</p>
+      <p class='mb-1 small'><a href='#!' class='font-weight-bold skc'>Batch Date: </a>$batch_date</p>
+      <p class='dark-grey-text small p-2'> </p>
+      </div>
+      </div>
+      </div>
+
+  ";
+      }
+      echo "</div></div></div> ";
+       echo " <div class='col-12'>
+    <div class='text-center'> ";
+      if ($page > 0) {
+        $last = $page - 2;
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Previous</button></a> ";
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($page == 0) {
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($left_rec < $rec_limit) {
+        $last = $page - 2;
+        echo "<a href = \"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Last</button></a>";
+      }
+      echo "</div></div> "
+      ?>

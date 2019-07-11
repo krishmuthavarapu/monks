@@ -6,13 +6,14 @@ if(isset($_POST["query"]))
 {
  $search = mysqli_real_escape_string($connection, $_POST["query"]);
  $query = "SELECT * FROM institute_data 
-WHERE  id  LIKE '%".$search."%'
-  OR course LIKE '%".$search."%' 
-  OR institute LIKE '%".$search."%' 
+WHERE course LIKE '%".$search."%' 
+  OR institute LIKE '%".$search."%'
+  OR location LIKE '%".$search."%'
+  OR batch_date LIKE '%".$search."%' 
  ";}
 else
 {
- $query = "SELECT * FROM institute_data";
+  $query = "SELECT * FROM institute_data ORDER BY batch_date DESC";
 }
 $result = mysqli_query($connection, $query);
 if(mysqli_num_rows($result) > 0)
@@ -25,6 +26,8 @@ if(mysqli_num_rows($result) > 0)
     $location = $row['location'];
     $batch_date = $row['batch_date'];
   $output .= '
+  <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
+
   <div class="row  card-course h-95 mb-0 pt-0">
     <div class="">
       <div class="overlay rounded  mb-2 mt-0">
@@ -34,15 +37,16 @@ if(mysqli_num_rows($result) > 0)
         </a>
       </div>
     </div>
-    <div class="p-2">
+    <div class="p-2 w-100">
       <a href="#!" class="">
         <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i>'.$course.'</p>
 </a>
-<h5 class="mb-1"><strong>'.$row["institute"].'</h5>
-<p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a>'.$institute.'</p>
+<h5 class="mb-1"><strong>'.$institute.'</strong></h5>
+<p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a>'.$location.'</p>
 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a>'.$batch_date.'</p>
-<p class="dark-grey-text small p-2"> </p>
+<div class="" style="float:right"><p class="dark-grey-text small"><a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank"><i class="fab  fa-whatsapp skc pr-1" style="font-size:18px" ></i></a><a href="tel:9578800900" class="skc"> 9578 800 900</a> </p></div>
 <!-- Read more button -->
+</div>
 </div>
 </div>
   ';
@@ -53,4 +57,3 @@ else
 {
  echo 'Record Not Found';
 }
-?>

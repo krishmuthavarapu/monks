@@ -126,7 +126,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="p-2">
+                <div class="p-2 w-100">
                   <!-- Category -->
                   <a href="#!" class="">
                     <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
@@ -137,7 +137,7 @@
                   <!-- Post data -->
                   <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
                   <!-- Excerpt -->
-                  <p class="dark-grey-text small p-2"> </p>
+                  <div class="" style="float:right"><p class="dark-grey-text small"><a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank"><i class="fab  fa-whatsapp skc pr-1" style="font-size:18px" ></i></a><a href="tel:9578800900" class="skc"> 9578 800 900</a> </p></div>
                   <!-- Read more button -->
                 </div>
               </div>

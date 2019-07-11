@@ -104,7 +104,7 @@
                     </div>
                     <div class="col text-center align-self-center">
                         <div class="overlay zoom">
-                            <button type="button" class="btn btn-default btn skbg btn-rounded">
+                            <button type="button" onclick="location.href='batch.php'" class="btn btn-default btn skbg btn-rounded">
                                 <div class="h5-responsive">Trainer</div>
                             </button>
                         </div>
