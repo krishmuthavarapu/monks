@@ -283,5 +283,22 @@ if(isset($_POST['delete_coursetab']))
     }
 
 
+
+// delete course selected student data
+if(isset($_POST['delete_student_select']))
+{
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM student_course_selected WHERE id = '$id'";
+    $query_run = mysqli_query($connection,$query);
+    if($query_run){
+        $_SESSION['success']="Deleted";
+        header('Location: student_cselect_data.php');
+    }else{
+     $_SESSION['status']="NOT deleted";
+     header('Location: student_cselect_data.php');    
+     }
+    }
+
+
 ?>
 

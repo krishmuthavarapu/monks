@@ -25,10 +25,11 @@ if(mysqli_num_rows($result) > 0)
     $institute = $row['institute'];
     $location = $row['location'];
     $batch_date = $row['batch_date'];
+    $id = $row['id'];
   $output .= '
   <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
 
-  <div class="row  card-course h-95 mb-0 pt-0">
+  <div class="row  card-course h-95 mb-0 pt-0 d-rel">
     <div class="">
       <div class="overlay rounded  mb-2 mt-0">
         <img class="img-fluid" src="'.$image.'" alt="Sample image">
@@ -44,7 +45,24 @@ if(mysqli_num_rows($result) > 0)
 <h5 class="mb-1"><strong>'.$institute.'</strong></h5>
 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a>'.$location.'</p>
 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a>'.$batch_date.'</p>
-<div class="" style="float:right"><p class="dark-grey-text small"><a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank"><i class="fab  fa-whatsapp skc pr-1" style="font-size:18px" ></i></a><a href="tel:9578800900" class="skc"> 9578 800 900</a> </p></div>
+<p class="p-3"></p>
+<div class="d-abs" style="float:right">
+  <p class="dark-grey-text small" style="float:left">
+    <a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank">
+      <i class="fab  fa-whatsapp skc pr-1" style="font-size:18px"></i>
+    </a><a href="tel:9578800900" class="skc"> 9578 800 900</a>
+
+  </p>
+  <form action="student_course_select.php" method="post">
+
+    <p class="dark-grey-text small" style="float:right">
+
+      <input type="hidden" name="edit_id" value="'.$id.'">
+      <button class="skbc btn-rounded border-0" href="#!" name="course_select_btn" type="submit">Apply</button>
+    </p>
+  </form>
+
+</div>
 <!-- Read more button -->
 </div>
 </div>

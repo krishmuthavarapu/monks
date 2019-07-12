@@ -425,3 +425,12 @@ $sql = ("SELECT * FROM institute_data WHERE (course LIKE '%$search_value%') AND 
       }
       echo "</div></div> "
       ?>
+      div{
+        position:absolute;
+      }
+      element.style {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    float: right;
+}

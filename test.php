@@ -121,41 +121,39 @@
     <?php include('includes/header.php'); ?>
   </div>
   <div class="container">
-  <script>
-$(document).ready(function(){
- load_data();
- function load_data(query)
- {
-  $.ajax({
-   url:"tab_search.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('#result').html(data);
-   }
-  });
- }
- $('#search').keyup(function(){
-  var search = $(this).val();
-  if(search != '')
-  {
-   load_data(search);
-  }
-  else
-  {
-   load_data();
-  }
- });
-});
-</script>
+    <script>
+      $(document).ready(function() {
+        load_data();
+
+        function load_data(query) {
+          $.ajax({
+            url: "tab_search.php",
+            method: "POST",
+            data: {
+              query: query
+            },
+            success: function(data) {
+              $('#result').html(data);
+            }
+          });
+        }
+        $('#search').keyup(function() {
+          var search = $(this).val();
+          if (search != '') {
+            load_data(search);
+          } else {
+            load_data();
+          }
+        });
+      });
+    </script>
     <!-- <button type="button" class=" btn modelbutton" data-toggle="modal" data-target="#basicExampleModal">
       Launch demo modal
     </button> -->
     <div class="row">
       <div class="col-12">
-      <input type="text" name="search" id="search" placeholder="Search" class="form-control" />
-      
+        <input type="text" name="search" id="search" placeholder="Search" class="form-control" />
+
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
@@ -212,7 +210,7 @@ $(document).ready(function(){
           $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
+            <div class="row  card-course h-95 mb-0 pt-0 d-rel">
               <!-- Featured image -->
               <div class="">
                 <div class=" overlay rounded  mb-2 mt-0">
@@ -222,7 +220,7 @@ $(document).ready(function(){
                   </a>
                 </div>
               </div>
-              <div class="p-2 w-100">
+              <div class="p-2 w-100 ">
                 <!-- Category -->
                 <a href="#!" class="">
                   <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
@@ -233,7 +231,25 @@ $(document).ready(function(){
                 <!-- Post data -->
                 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
                 <!-- Excerpt -->
-                <div class="" style="float:right"><p class="dark-grey-text small"><a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank"><i class="fab  fa-whatsapp skc pr-1" style="font-size:18px" ></i></a><a href='tel:9578800900' class="skc"> 9578 800 900</a> </p></div>
+                <p class="p-2"></p>
+                <div class="d-abs" style="float:right">
+                  <p class="dark-grey-text small" style="float:left">
+                    <a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank">
+                      <i class="fab  fa-whatsapp skc pr-1" style="font-size:18px"></i>
+                    </a><a href='tel:9578800900' class="skc"> 9578 800 900</a>
+
+                  </p>
+                  <form action="student_course_select.php" method="post">
+
+                  <p class="dark-grey-text small" style="float:right">
+                  
+                     <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
+                     <button class="skbc p-1 btn-rounded border-0" href="#!" name="course_select_btn" type="submit">Apply</button>
+                  </p>
+                  </form>
+
+                </div>
+               
                 <!-- Read more button -->
               </div>
             </div>
@@ -258,7 +274,7 @@ $(document).ready(function(){
           $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
+            <div class="row  card-course h-95 mb-0 pt-0 d-rel">
               <!-- Featured image -->
               <div class="">
                 <div class=" overlay rounded  mb-2 mt-0">
@@ -279,7 +295,15 @@ $(document).ready(function(){
                 <!-- Post data -->
                 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
                 <!-- Excerpt -->
-                <p class="dark-grey-text small">Nam libero tempore, cum soluta nobis est </p>
+                <p class="p-2"></p>
+                <div class="d-abs" style="float:right">
+                  <p class="dark-grey-text small">
+                    <a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank">
+                      <i class="fab  fa-whatsapp skc pr-1" style="font-size:18px"></i>
+                    </a>
+                    <a href='tel:9578800900' class="skc"> 9578 800 900</a>
+                  </p>
+                </div>
                 <!-- Read more button -->
               </div>
             </div>
@@ -303,7 +327,7 @@ $(document).ready(function(){
           $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
           ?>
           <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
-            <div class="row  card-course h-95 mb-0 pt-0">
+            <div class="row  card-course h-95 mb-0 pt-0 d-rel">
               <!-- Featured image -->
               <div class="">
                 <div class=" overlay rounded  mb-2 mt-0">
@@ -324,7 +348,15 @@ $(document).ready(function(){
                 <!-- Post data -->
                 <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
                 <!-- Excerpt -->
-                <p class="dark-grey-text small">Nam libero tempore, cum soluta nobis est </p>
+                <p class="p-2"></p>
+                <div class="d-abs">
+                  <p class="dark-grey-text small">
+                    <a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank">
+                      <i class="fab  fa-whatsapp skc pr-1" style="font-size:18px"></i>
+                    </a>
+                    <a href='tel:9578800900' class="skc"> 9578 800 900</a>
+                  </p>
+                </div>
                 <!-- Read more button -->
               </div>
             </div>
