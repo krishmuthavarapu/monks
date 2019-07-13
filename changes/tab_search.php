@@ -29,7 +29,7 @@ if(mysqli_num_rows($result) > 0)
   $output .= '
   <div class="col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated">
 
-  <div class="row  card-course h-95 mb-0 pt-0 d-rel">
+  <div class="card-course h-95 mb-0 pt-0 d-rel">
     <div class="">
       <div class="overlay rounded  mb-2 mt-0">
         <img class="img-fluid" src="'.$image.'" alt="Sample image">

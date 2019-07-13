@@ -116,7 +116,7 @@
             ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-              <div class="row  card-course h-95 mb-0 pt-0 d-rel">
+              <div class="card-course h-95 mb-0 pt-0 d-rel">
                 <!-- Featured image -->
                 <div class="">
                   <div class=" overlay rounded  mb-2 mt-0">

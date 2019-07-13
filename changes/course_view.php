@@ -154,6 +154,7 @@
     </div>
   </div>
   <div class="container tab-content cus-tab-content mt-3" id="myTabContent">
+    
     <div class="row tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
       <?php
       $rec_limit = 28;
@@ -178,6 +179,19 @@
         "FROM institute_data ORDER BY batch_date DESC " .
         "LIMIT $offset, $rec_limit ";
       $retval = mysqli_query($connection, $sql);
+      echo " <div class='col-12'>
+   <div class=''> ";
+      if ($page > 0) {
+        $last = $page - 2;
+        echo "<a href=\"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Previous</button></a> ";
+        echo "<a class='float-right' href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($page == 0) {
+        echo "<a class='float-right' href=\"$_SERVER[PHP_SELF]?page=$page\"><button class='btn btn-rounded skbg'>Next</button></a>";
+      } else if ($left_rec < $rec_limit) {
+        $last = $page - 2;
+        echo "<a class='float-right' href = \"$_SERVER[PHP_SELF]?page=$last\"><button class='btn btn-rounded skbg'>Last</button></a>";
+      }
+      echo "</div></div> ";
       if (!$retval) {
         die('Could not get data: ' . mysql_error());
       }
@@ -190,10 +204,10 @@
         $id = $row['id'];
         echo "
        <div class='col-lg-3 col-md-12 mb-lg-0 mb-4 card-head fadeIn animated'>
-           <div class='row  card-course h-95 mb-0 pt-0 d-rel'>
+           <div class=' card-course h-95 mb-0 pt-0 d-rel'>
              <div class=''>
-               <div class='overlay rounded  mb-2 mt-0'>
-                 <img class='img-fluid' src='$image' alt='Sample image'>
+               <div class=' rounded  mb-2 mt-0'>
+                 <img class='img-fluid ' src='$image' alt='Sample image'>
                  <a>
                    <div class='mask rgba-white-slight'></div>
                  </a>
@@ -246,7 +260,7 @@
       ?>
     </div>
     <div class="row tab-pane fade show" id="serch" role="tabpanel" aria-labelledby="all-tab">
-      <div class='row' id='result'></div>
+      <div class='row w-100' id='result'></div>
 
     </div>
     <?php
@@ -277,7 +291,7 @@
               $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
               ?>
               <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-                <div class="row  card-course h-95 mb-0 pt-0 d-rel">
+                <div class="card-course h-95 mb-0 pt-0 d-rel">
                   <!-- Featured image -->
                   <div class="">
                     <div class=" overlay rounded  mb-2 mt-0">
@@ -329,7 +343,6 @@
       <?php
       }
     } else {
-      echo "No record found";
     }
     ?>
 

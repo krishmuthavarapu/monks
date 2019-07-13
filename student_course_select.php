@@ -101,7 +101,7 @@
                             <p class="">We help skill seekers in discovering their true mentors and fulfilling their skill needs in a personalised way</p>
                         </div>
 
-                        <div class="row text-center card-caf mt-3">
+                        <div class="row text-center card-caf mt-3 d-none d-lg-flex d-md-flex d-xl-flex">
 
                             <!-- Grid column -->
                             <div class="col-lg-6 col-md-12 mb-lg-0  mb-4 zoom ">
@@ -233,8 +233,79 @@ VALUES ('" . $_POST["username"] . "', '" . $_POST["number"] . "', '" . $_POST["e
                             ?>
                             <!-- Default form login -->
                         </div>
+                        <div class="row text-center card-caf mt-3 d-flex d-lg-none d-md-none d-xl-none ">
 
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0  mb-4 zoom ">
 
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                    <img src="img/icons/com.png" width="50px">
+                                    <!-- <h5 class="font-weight-bold my-2">Support</h5> -->
+                                    <p class="mb-0 mt-2">Personalised Career Guidance</p>
+
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                    <img src="img/icons/money.png" width="50px">
+                                    <p class="mb-0 mt-2">Assured Quality with Money Back Guarantee</p>
+
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                    <img src="img/icons/offer.png" width="50px">
+                                    <p class="mb-0 mt-2">Best Discount on Fee</p>
+
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                    <img src="img/icons/tution.png" width="50px">
+                                    <p class="mb-0 mt-2">Get Connected with Best-in-Class Training Companies</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                    <img src="img/icons/qua.png" width="50px">
+
+                                    <p class="mb-0 mt-2">App that Keeps You Posted on Industry Trends and Opportunities</p>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                <!--Excerpt-->
+                                <div class="card-body pt-3 pb-3">
+
+                                    <img src="img/icons/discount.png" width="50px">
+
+                                    <p class="mb-0 mt-2">Zero Percent Interest Loan Options</p>
+
+                                </div>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
