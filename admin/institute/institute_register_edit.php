@@ -1,7 +1,4 @@
 <?php
-include('security.php');
-include('db/config.php');
-
 include('includes/header.php'); ?>
 
 <?php include('includes/navbar.php'); ?>
@@ -47,7 +44,7 @@ include('includes/header.php'); ?>
                     </div>
                     
                     
-                    <a href="institute_data.php" class="btn btn-danger">Cancel</a>
+                    <a href="profile.php" class="btn btn-danger">Cancel</a>
                     <button class="btn btn-primary" type="submit" name="update_institute_register">Update</button>
                 </form>
                 <?php

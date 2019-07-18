@@ -1,7 +1,4 @@
 <?php
-include('security.php');
-include('db/config.php');
-
 include('includes/header.php'); ?>
 
 <?php include('includes/navbar.php'); ?>
@@ -30,7 +27,7 @@ include('includes/header.php'); ?>
 				$query = "SELECT * FROM institute_data WHERE id='$id'";
 				$query_run = mysqli_query($connection, $query);
 				foreach ($query_run as $row) {
-					$image = (!empty($row['photo'])) ? '../img/' . $row['photo'] : '../img/jav.jpg';
+					$image = (!empty($row['photo'])) ? '../../img/' . $row['photo'] : '../../img/jav.jpg';
 
 					?>
 					<form method="POST" action="photo_update.php" enctype="multipart/form-data">
@@ -43,7 +40,7 @@ include('includes/header.php'); ?>
 							<input type="file" class="form-control form-control-user" value="" name="file">
 						</div>
 
-						<a href="institute_data.php" class="btn btn-danger">Cancel</a>
+						<a href="batch.php" class="btn btn-danger">Cancel</a>
 						<button class="btn btn-primary" value="upload" type="submit" name="upload">Update</button>
 
 						<!-- <form enctype="multipart/form-data" method="post">

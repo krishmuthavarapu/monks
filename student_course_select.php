@@ -186,8 +186,8 @@
 
                             if (isset($_POST['submit'])) {
                                 $mysqltime = date_create()->format('Y-m-d H:i:s');
-                                $sql = "INSERT INTO student_course_selected(username, number, email, passing_year, qualification, course_interested, institute_selected, city, date)
-VALUES ('" . $_POST["username"] . "', '" . $_POST["number"] . "', '" . $_POST["email"] . "', '" . $_POST["passing_year"] . "', '" . $_POST["qualification"] . "', '" . $_POST["course_interested"] . "', '" . $_POST["institute_selected"] . "', '" . $_POST["city"] . "', '" . $mysqltime . "')";
+                                $sql = "INSERT INTO student_course_selected(username, number, email, passing_year, qualification, course_interested, institute_selected, institute_email, city, date)
+VALUES ('" . $_POST["username"] . "', '" . $_POST["number"] . "', '" . $_POST["email"] . "', '" . $_POST["passing_year"] . "', '" . $_POST["qualification"] . "', '" . $_POST["course_interested"] . "', '" . $_POST["institute_selected"] . "', '" . $_POST["institute_email"] . "', '" . $_POST["city"] . "', '" . $mysqltime . "')";
 
                                 $result = mysqli_query($connection, $sql);
                                 echo "<script>window.location.href='thankq.php'</script>";
@@ -213,6 +213,7 @@ VALUES ('" . $_POST["username"] . "', '" . $_POST["number"] . "', '" . $_POST["e
                                         <input type="text"  id="" class="form-control mb-3" name="qualification" placeholder="Qualification" required>
                                         <input type="text" readonly="readonly" id="" class="form-control mb-3" value="<?php echo $row['course']?>" name="course_interested" placeholder="Course Interested In" required>
                                         <input type="text" readonly="readonly" id="" class="form-control mb-3" value="<?php echo $row['institute']?>" name="institute_selected" placeholder="Selected Institute" required>
+                                        <input type="email" hidden readonly="readonly" id="" class="form-control mb-3" value="<?php echo $row['email']?>" name="institute_email" placeholder="institute email" required>
                                         <input type="text" id="" class="form-control mb-3" name="city" placeholder="City" required>
 
                                         <!-- Sign in button -->
