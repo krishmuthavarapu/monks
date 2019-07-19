@@ -65,8 +65,8 @@
 
         if (isset($_POST['submit'])) {
           $mysqltime = date_create()->format('Y-m-d H:i:s');
-          $sql = "INSERT INTO institute_data(institute, course, location, batch_date, demo_date, email, number, date)
-VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["location"] . "', '" . $_POST["batch_date"] . "', '" . $_POST["demo_date"] . "', '" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $mysqltime . "')";
+          $sql = "INSERT INTO institute_data(institute, course, location, city, batch_date, demo_date, email, number, date)
+VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["location"] . "', '" . $_POST["city"] . "', '" . $_POST["batch_date"] . "', '" . $_POST["demo_date"] . "', '" . $_POST["email"] . "', '" . $_POST["number"] . "', '" . $mysqltime . "')";
 
           $result = mysqli_query($connection, $sql);
           echo "<script>window.location.href='institute_registration.php'</script>";
@@ -170,6 +170,9 @@ VALUES ('" . $_POST["institute"] . "','" . $_POST["course"] . "', '" . $_POST["l
                         </div>
                         <div class="form-group">
                           <input type="text" name="location" class="form-control" placeholder="location" value="" required />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="city" class="form-control" placeholder="City" value="" required />
                         </div>
 
                         <div class="form-group">
