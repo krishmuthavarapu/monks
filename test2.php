@@ -79,7 +79,8 @@
                     url: "tab_search.php",
                     method: "POST",
                     data: {
-                        query: query
+                        query: query,
+                        city:"hyderabad",
                     },
                     success: function(data) {
                         $('#result').html(data);
@@ -123,23 +124,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
                     </li>
-             
 
-                    <?php
-                    $query = "SELECT * FROM course_tab";
-                    $query_run = mysqli_query($connection, $query);
-                    ?>
-                    <?php
-                    if (mysqli_num_rows($query_run) > 0) {
-                        while ($row = mysqli_fetch_assoc($query_run)) {
-                            ?>
-                            <li class="nav-item d-none d-md-block">
-                                <a class="nav-link" id="<?php echo $row['course_id']; ?>-tab" data-toggle="tab" href="#<?php echo $row['course_id']; ?>" role="tab" aria-controls="<?php echo $row['course']; ?>" aria-selected="false"><?php echo $row['course']; ?></a>
-                            </li>
-                        <?php
-                        }
-                    } else { }
-                    ?>
 
                     <li class="nav-item ml-auto" style="">
                         <span data-toggle="tab" href="#serch" id="tab-city">
@@ -163,35 +148,9 @@
                 <h2 class="h2-responsive text-center">Upcoming Batches.</h2>
             </div>
         </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-3 col-8 ml-md-0 ml-5">
-                <?php
-                $query = "SELECT DISTINCT(city) as city FROM institute_data WHERE city !='' AND city IS NOT NULL";
-                $query_run = mysqli_query($connection, $query);
-                ?>
-                <select class="browser-default custom-select nav-link"  onchange="myFunction(event)">
-                <option value="" disabled selected>City</option>
-                  <?php  if (mysqli_num_rows($query_run) > 0) {
-                        while ($row = mysqli_fetch_assoc($query_run)) {
-                            ?>
-                    <option value="<?php echo $row['city'];?>"><?php echo $row['city'];?></option>
-                   <?php
-                        }
-                    }else{
-                        echo "No record found";
-                    }
-                    ?>
-                </select>
-            </div>
-        </div>
+
     </div>
-    <script>
-        function myFunction(e) {
-            document.getElementById("tab-city").click();
-            document.getElementById("search-city").value = e.target.value;
-            document.getElementById("search-city").focus();
-        }
-    </script>
+
 
     <div class="container tab-content cus-tab-content mt-3" id="myTabContent">
 
@@ -214,9 +173,10 @@
                 $page = 0;
                 $offset = 0;
             }
+            $city = "Hyderabad";
             $left_rec = $rec_count - ($page * $rec_limit);
             $sql = "SELECT * " .
-                "FROM institute_data ORDER BY batch_date DESC " .
+                "FROM institute_data WHERE city = '$city' ORDER BY batch_date DESC " .
                 "LIMIT $offset, $rec_limit ";
             $retval = mysqli_query($connection, $sql);
             echo " <div class='col-12'>

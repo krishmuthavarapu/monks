@@ -79,7 +79,6 @@
           url: "tab_search.php",
           method: "POST",
           data: {
-            city:"",
             query: query
           },
           success: function(data) {
