@@ -76,10 +76,11 @@
 
       function load_data(query) {
         $.ajax({
-          url: "tab_search.php",
+          url: "tab_search_category.php",
           method: "POST",
           data: {
-            city:"",
+            city: "",
+            category:"data science",
             query: query
           },
           success: function(data) {
@@ -114,24 +115,8 @@
       <div class="col-12">
         <ul class="nav nav-tabs cus-s-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">All Courses</a>
+            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="contact" aria-selected="false">Data Science</a>
           </li>
-          <?php
-          $query = "SELECT * FROM course_tab";
-          $query_run = mysqli_query($connection, $query);
-          ?>
-          <?php
-          if (mysqli_num_rows($query_run) > 0) {
-            while ($row = mysqli_fetch_assoc($query_run)) {
-              ?>
-              <li class="nav-item d-none d-md-block">
-                <a class="nav-link" id="<?php echo $row['course_id']; ?>-tab" data-toggle="tab" href="#<?php echo $row['course_id']; ?>" role="tab" aria-controls="<?php echo $row['course']; ?>" aria-selected="false"><?php echo $row['course']; ?></a>
-              </li>
-            <?php
-            }
-          } else { }
-          ?>
-
           <li class="nav-item ml-auto" style="">
             <!-- <div class="md-form mb-0 mt-1 ">
   <input type="text" id="search" name="search" class="form-control" style="color:white" autocomplete="off" class="form-control" data-toggle="tab" href="#serch" role="tab" aria-controls="contact" aria-selected="false">
@@ -155,7 +140,7 @@
     </div>
   </div>
   <div class="container tab-content cus-tab-content mt-3" id="myTabContent">
-    
+
     <div class="row tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
       <?php
       $rec_limit = 28;
@@ -176,8 +161,9 @@
         $offset = 0;
       }
       $left_rec = $rec_count - ($page * $rec_limit);
+      $category = "data science";
       $sql = "SELECT * " .
-        "FROM institute_data ORDER BY batch_date DESC " .
+        "FROM institute_data WHERE category LIKE '%$category%' ORDER BY batch_date DESC " .
         "LIMIT $offset, $rec_limit ";
       $retval = mysqli_query($connection, $sql);
       echo " <div class='col-12'>
@@ -264,81 +250,7 @@
       <div class='row w-100' id='result'></div>
 
     </div>
-    <?php
-    $query = "SELECT * FROM course_tab";
-    $query_run = mysqli_query($connection, $query);
-    ?>
-    <?php
-    if (mysqli_num_rows($query_run) > 0) {
-      while ($row = mysqli_fetch_assoc($query_run)) {
-        ?>
-        <div class="row tab-pane fade show" id="<?php echo $row['course_id']; ?>" role="tabpanel" aria-labelledby="<?php echo $row['course_id']; ?>-tab">
-          <?php
-          $category = $row['key_words'];
 
-          $querys = "SELECT * FROM institute_data WHERE category LIKE '%$category%' ORDER BY batch_date DESC ";
-          $querys_run = mysqli_query($connection, $querys);
-          ?>
-          <?php
-          if (mysqli_num_rows($querys_run) > 0) {
-            while ($row = mysqli_fetch_assoc($querys_run)) {
-              $image = (!empty($row['photo'])) ? 'img/' . $row['photo'] : 'img/jav.jpg';
-              ?>
-              <div class="col-lg-3 col-md-4 col-sm-6 mb-lg-0 mb-4 card-head fadeIn animated">
-                <div class="card-course h-95 mb-0 pt-0 d-rel">
-                  <!-- Featured image -->
-                  <div class="">
-                    <div class=" overlay rounded  mb-2 mt-0">
-                      <img class="img-fluid w-100" width="100%" src="<?php echo $image ?>" alt="Sample image">
-                      <a>
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="pt-2 pr-2 pl-2 w-100">
-                    <!-- Category -->
-                    <a href="#!" class="">
-                      <p class="font-weight-bold mb-1 skc"><i class="fas fa-map pr-2"></i><?php echo $row['course']; ?></p>
-                    </a>
-                    <!-- Post title -->
-                    <h5 class=" mb-1"><strong><?php echo $row['institute']; ?></strong></h5>
-                    <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Location: </a><?php echo $row['location']; ?></p>
-                    <!-- Post data -->
-                    <p class="mb-1 small"><a href="#!" class="font-weight-bold skc">Batch Date: </a><?php echo $row['batch_date']; ?></p>
-                    <!-- Excerpt -->
-                    <p class="p-3"></p>
-                    <div class="d-abs" style="float:right">
-                      <p class="dark-grey-text small" style="float:left">
-                        <a href="https://api.whatsapp.com/send?phone=9578800900" target="_blank">
-                          <i class="fab  fa-whatsapp skc pr-1" style="font-size:18px"></i>
-                        </a><a href='tel:9578800900' class="skc"> 9578 800 900</a>
-
-                      </p>
-                      <form action="student_course_select.php" method="post">
-
-                        <p class="dark-grey-text small" style="float:right">
-
-                          <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-                          <button class="skbc btn-rounded border-0" href="#!" name="course_select_btn" type="submit">Apply</button>
-                        </p>
-                      </form>
-
-                    </div> <!-- Read more button -->
-                  </div>
-                </div>
-              </div>
-            <?php
-            }
-          } else {
-            echo "No record found";
-          }
-          ?>
-        </div>
-      <?php
-      }
-    } else {
-    }
-    ?>
 
   </div>
 

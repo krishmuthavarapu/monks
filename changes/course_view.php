@@ -79,6 +79,7 @@
           url: "tab_search.php",
           method: "POST",
           data: {
+            city:"",
             query: query
           },
           success: function(data) {
@@ -273,16 +274,9 @@
         ?>
         <div class="row tab-pane fade show" id="<?php echo $row['course_id']; ?>" role="tabpanel" aria-labelledby="<?php echo $row['course_id']; ?>-tab">
           <?php
-          $selected = $row['key_words'];
-          $search_exploded = explode(" ", $selected);
-          $x = 0;
-          $construct = "";
-          foreach ($search_exploded as $search_each) {
-            $x++;
-            if ($x == 1) $construct .= "course LIKE '%$search_each%' OR institute LIKE '%$search_each%'";
-            else $construct .= "OR institute LIKE '%$search_each%'";
-          }
-          $querys = "SELECT * FROM institute_data WHERE $construct ORDER BY batch_date DESC ";
+          $category = $row['key_words'];
+
+          $querys = "SELECT * FROM institute_data WHERE category LIKE '%$category%' ORDER BY batch_date DESC ";
           $querys_run = mysqli_query($connection, $querys);
           ?>
           <?php

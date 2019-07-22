@@ -1,10 +1,10 @@
-<body id="page-top">
+<body id="page-top" class="sidebar-toggled">
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="institute_view.php">
@@ -22,13 +22,13 @@
 				<a class="nav-link" href="institute_view.php">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Students Applied</span></a>
-      </li>
-      <li class="nav-item active">
+			</li>
+			<li class="nav-item active">
 				<a class="nav-link" href="profile.php">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Edit Profile</span></a>
-      </li>
-      <li class="nav-item active">
+			</li>
+			<li class="nav-item active">
 				<a class="nav-link" href="batch.php">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Edit Batch details</span></a>

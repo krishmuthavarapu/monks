@@ -10,6 +10,7 @@ WHERE course LIKE '%".$search."%'
   OR institute LIKE '%".$search."%'
   OR location LIKE '%".$search."%'
   OR batch_date LIKE '%".$search."%' 
+  OR category LIKE '%" . $search . "%' ORDER BY batch_date DESC
  ";}
 else
 {

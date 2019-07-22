@@ -79,36 +79,43 @@
 
                 <!--Grid row-->
                 <div class="row pt-3 mt-3 pb-3">
-                    <div class="col text-center ">
-                        <h2 class="h-rem" style="font-weight:400"><span class="skc">Explore</span> Now!</h2>
-                        <p>Skill Seekers/Skill Development Companies Stay Tuned... Something Cool Coming Soon.</p>
-
-                        <!-- <h2 class="h-rem" style="font-weight:400"><span class="p-1">Welcome to</span><span class="p-1" style="color: #01783d;">SkillMonks</span></h2> -->
-                        <!-- <h2 class="h2-responsive weight-400"><span class="skbc p-1">Welcome </span><span style="" class="p-1 bg-dark text-white"> to SkillMonks</span></h2> -->
-                    </div>
+                   <div class="col-md-6">
+                       <h5 class="ml-3">Course Category list</h5>
+                       <ul>
+                           <li>
+                               <a href="data_science_training.php" target="_blank">Data Science</a>
+                           </li>
+                           <li>
+                               <a href="multimedia_training.php" target="_blank">Multimedia</a>
+                           </li>
+                           <li>
+                               <a href="cyber_security_training.php" target="_blank">Cyber Security</a>
+                           </li>
+                           <li>
+                               <a href="web_technologies_training.php" target="_blank">Web Technologies</a>
+                           </li>
+                           <li>
+                               <a href="database_training.php" target="_blank">Database training</a>
+                           </li>
+                           <li>
+                               <a href="other_training.php" target="_blank">Others</a>
+                           </li>
+                           <li>
+                               <a href="course_view.php" target="_blank">All Courses</a>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="col-md-6 ">
+                       <h5 class="ml-3">Search According to city</h5>
+                       <ul>
+                           <li>
+                               <a href="course_hyderabad.php" target="_blank">Hyderabad</a>
+                           </li>
+                       </ul>
+                   </div>
                 </div>
                 <div class="row wow fadeIn pb-100 mb-5 pt-3 mt-5 animated fadeIn">
-                    <div class="col text-center align-self-center">
-                        <div class="overlay zoom">
-                            <button type="button" onclick="location.href='welcome.php'" class="btn btn-default btn skbg btn-rounded ">
-                                <div class="h5-responsive">Student</div>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col text-center align-self-center ">
-                        <div class="overlay zoom">
-                            <button type="button" onclick="location.href='batch.php'" class="btn btn-default btn skbg btn-rounded">
-                                <div class="h5-responsive">Institute</div>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col text-center align-self-center">
-                        <div class="overlay zoom">
-                            <button type="button" onclick="location.href='batch.php'" class="btn btn-default btn skbg btn-rounded">
-                                <div class="h5-responsive">Trainer</div>
-                            </button>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
 

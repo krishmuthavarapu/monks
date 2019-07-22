@@ -31,7 +31,13 @@ include('includes/header.php'); ?>
                         <input type="text" class="form-control form-control-user" value="<?php echo $row['course']?>" name="edit_course" placeholder="Course ">
                     </div>
                     <div class="form-group">
+                        <input type="text" class="form-control form-control-user" value="<?php echo $row['category']?>" name="edit_category" placeholder="category ">
+                    </div>
+                    <div class="form-group">
                         <input type="text" class="form-control form-control-user" value="<?php echo $row['location']?>" name="edit_location" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" value="<?php echo $row['city']?>" name="edit_city" placeholder="City">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" value="<?php echo $row['batch_date']?>" name="edit_batch" placeholder="Batch date and time">

@@ -36,6 +36,7 @@ include('includes/header.php'); ?>
                         <th>ID</th>
                         <th>Institute Name</th>
                         <th>Course</th>
+                        <th>Category</th>
                         <th>Location</th>
                         <th>City</th>
                         <th>Batch Date</th>
@@ -58,6 +59,7 @@ include('includes/header.php'); ?>
                                 <td><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['institute']; ?></td>
                                 <td><?php echo $row['course']; ?></td>
+                                <td><?php echo $row['category']; ?></td>
                                 <td><?php echo $row['location']; ?></td>
                                 <td><?php echo $row['city']; ?></td>
                                 <td><?php echo $row['batch_date']; ?></td>
