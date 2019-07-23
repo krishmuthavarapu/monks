@@ -14,7 +14,6 @@
             <p class="text-dark head-mail font-weight-bolder pt-3 pt-lg-5 pt-md-5">
                 Email : skillmonks@gmail.com &nbsp &nbsp Contact :
                 9578 800 900
-
             </p>
         </div>
     </div>

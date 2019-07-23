@@ -78,8 +78,8 @@
 
 
                 <!--Grid row-->
-                <div class="row pt-3 mt-3 pb-3">
-                   <div class="col-md-6">
+                <div class="row pt-3 mt-3 pb-3 pl-5">
+                   <div class="col-md-4">
                        <h5 class="ml-3">Course Category list</h5>
                        <ul>
                            <li>
@@ -96,6 +96,12 @@
                            </li>
                            <li>
                                <a href="database_training.php" target="_blank">Database training</a>
+                           </li>
+                           <li>
+                               <a href="digital_marketing_training.php" target="_blank">Digital Marketing</a>
+                           </li>
+                           <li>
+                               <a href="sap_training.php" target="_blank">SAP training</a>
                            </li>
                            <li>
                                <a href="other_training.php" target="_blank">Others</a>

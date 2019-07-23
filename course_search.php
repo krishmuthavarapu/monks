@@ -83,7 +83,7 @@
       if ($connection->connect_error) {
         echo 'Connection Faild: ' . $connection->connect_error;
       } else {
-        $sql = ("SELECT * FROM institute_data WHERE course LIKE '%$search_value%' ORDER BY batch_date DESC") or die("Could not search");
+        $sql = ("SELECT * FROM institute_data WHERE (course LIKE '%$search_value%') OR (category LIKE '%$search_value%') OR (city LIKE '%$search_value%') ORDER BY batch_date DESC") or die("Could not search");
 
 
         $res = $connection->query($sql);
